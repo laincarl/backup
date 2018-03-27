@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.item{
+	display: inline-block;
+	width: 3rem;
+	margin: 1rem;
+	cursor: pointer;
+	text-align: center;
+	background: #ddd;
+}
+.page-container{
+	display: flex;
+	align-items: center;
+	width: 500px;
+}
+.pagenum-container{
+	flex: 1;
+	overflow: hidden;
+	word-break: keep-all;
+    /*单词内不换行*/
+    white-space: nowrap;
+    /*不换行*/
+    /*-webkit-line-clamp:2;设置为2行*/
+    overflow: hidden;    
+}

@@ -1,0 +1,217 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+
+        input[type="text"] {
+            height: 54px;
+            width: 360px;
+            margin-bottom: 20px;
+            margin-top: 70px;
+            font: 40px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;
+        }
+        .button {
+            height:54px;
+            width:90px;
+            display: inline-block;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font: 16px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;
+            margin-top:7px;
+            padding: .5em 2em .55em;
+            text-shadow: 0 1px 1px rgba(0,0,0,.3);
+            -webkit-border-radius: .5em;
+            -moz-border-radius: .5em;
+            border-radius: .5em;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+            box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        }
+
+
+        /* white */
+        .white {
+            color: #606060;
+            border: solid 1px #b7b7b7;
+            background: #fff;
+            background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+            background: -moz-linear-gradient(top, #fff, #ededed);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+        }
+
+            .white:hover {
+                background: #ededed;
+                background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
+                background: -moz-linear-gradient(top, #fff, #dcdcdc);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
+            }
+
+            .white:active {
+                color: #999;
+                background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff));
+                background: -moz-linear-gradient(top, #ededed, #fff);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');
+            }
+
+        /* blue */
+        .blue {
+            color: #d9eef7;
+            border: solid 1px #0076a3;
+            background: #0095cd;
+            background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+            background: -moz-linear-gradient(top, #00adee, #0078a5);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+        }
+
+            .blue:hover {
+                background: #007ead;
+                background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+                background: -moz-linear-gradient(top, #0095cc, #00678e);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+            }
+
+            .blue:active {
+                color: #80bed6;
+                background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+                background: -moz-linear-gradient(top, #0078a5, #00adee);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+            }
+        /* orange */
+        .orange {
+            color: #fef4e9;
+            border: solid 1px #da7c0c;
+            background: #f78d1d;
+            background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+            background: -moz-linear-gradient(top, #faa51a, #f47a20);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+        }
+
+            .orange:hover {
+                background: #f47c20;
+                background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+                background: -moz-linear-gradient(top, #f88e11, #f06015);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+            }
+
+            .orange:active {
+                color: #fcd3a5;
+                background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+                background: -moz-linear-gradient(top, #f47a20, #faa51a);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+            }
+    </style>
+    <script type="text/javascript">
+        var exp = "";
+        
+        function cal(c) {
+
+            if (c == "=") {
+               
+                txtResult.value = eval(exp);
+                exp = "";
+            }
+            else if (c == "C") { txtResult.value = ""; exp = ""; }
+            else if (c == "sin") {
+                
+                exp = exp + "Math.sin(";
+                txtResult.value +="sin(";
+            }
+            else if (c == "÷") {
+
+                exp = exp + "/";
+                txtResult.value += "÷";
+            }
+            else if (c == "cos") {
+                
+                exp = exp + "Math.cos(";
+               
+                txtResult.value += "cos(";
+
+            }
+            else if (c == "tan") {
+
+                exp = exp + "Math.tan(";
+
+                txtResult.value += "tan(";
+
+            }
+            else if (c == "ln") {
+
+                exp = exp + "Math.log(";
+
+                txtResult.value += "ln(";
+
+            }
+            else if (c == "←") {
+                if (txtResult.value.substring(txtResult.value.length - 4, txtResult.value.length) == "sin(" ||
+                    txtResult.value.substring(txtResult.value.length - 4, txtResult.value.length) == "cos(" ||
+                    txtResult.value.substring(txtResult.value.length - 4, txtResult.value.length) == "tan(") {
+                    exp = exp.substring(0, exp.length - 9);
+                    txtResult.value = txtResult.value.substring(0, txtResult.value.length - 4);
+                }
+                else if (txtResult.value.substring(txtResult.value.length - 3, txtResult.value.length) == "ln(")
+                {
+                    exp = exp.substring(0, exp.length - 8);
+                    txtResult.value = txtResult.value.substring(0, txtResult.value.length - 3);
+                }
+                else {
+                    exp = exp.substring(0, exp.length - 1);
+                    txtResult.value = txtResult.value.substring(0, txtResult.value.length - 1);
+                }
+            }
+
+            else {
+                exp += c;
+                
+                txtResult.value +=c;
+            }
+
+        }
+
+    </script>
+</head>
+
+<body style="background-image:url(bac.jpg);background-position:center; background-repeat:repeat-x repeat-y">
+    <div style="text-align:center" background:black>
+        <input id="txtResult" type="text" style="border-radius:12px;"  readonly /><br />
+
+        <input type="button" value="tan" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="sin" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="cos" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="←" class="button  white" onclick="cal(this.value)" /><br />
+
+        <input type="button" value="ln" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="(" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value=")" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="÷" class="button  blue" onclick="cal(this.value)" /><br />
+
+        <input type="button" value="7" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="8" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="9" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="x" class="button  blue" onclick="cal('*')" /><br />
+
+        <input type="button" value="4" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="5" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="6" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="-" class="button  blue" onclick="cal(this.value)" /><br />
+
+        <input type="button" value="1" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="2" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="3" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="+" class="button  blue" onclick="cal(this.value)" /><br />
+
+        <input type="button" value="0" class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="." class="button  white" onclick="cal(this.value)" />
+        <input type="button" value="C" class="button  white" onclick="cal('C')" />
+        <input type="button" value="=" class="button  orange" onclick="cal('=')" /><br />
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+/* General styles */
+
+.nav {
+	position: relative;
+	width: 8em;
+	margin: 0 0 0 3em;
+}
+
+.nav__item {
+	line-height: 1;
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0;
+	color: currentColor;
+	border: 0;
+	background: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.nav__item:focus {
+	outline: none;
+}
+
+/* Individual styles */
+
+
+/*** Beca ***/
+
+.nav--beca {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin: 0;
+	-webkit-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
+}
+
+.nav--beca .nav__item {
+	width: 5em;
+	height: 1.5em;
+}
+
+.nav--beca .nav__item::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 50%;
+	height: 2px;
+	margin: -1px 0 0 0;
+	opacity: 0.5;
+	background: #fff;
+	-webkit-transform: scale3d(0.5,1,1);
+	transform: scale3d(0.5,1,1);
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
+	-webkit-transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+	transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+}
+
+.nav--beca .nav__item:not(.nav__item--current):focus::before,
+.nav--beca .nav__item:not(.nav__item--current):hover::before {
+	opacity: 1;
+	-webkit-transform: scale3d(0.75,1,1);
+	transform: scale3d(0.75,1,1);
+}
+
+.nav--beca .nav__item--current::before {
+	opacity: 1;
+	-webkit-transform: scale3d(2,1,1);
+	transform: scale3d(2,1,1);
+}
+
+.nav--beca .nav__item-title {
+	font-size: 1.25em;
+	font-weight: bold;
+	display: block;
+	overflow: hidden;
+	margin: -1.15em 0 0 1.6em;
+	text-align: left;
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+.nav--beca .nav__item-title span {
+	display: block;
+	-webkit-transform: translate3d(0,100%,0);
+	transform: translate3d(0,100%,0);
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+	transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+}
+
+.nav--beca .nav__item--current .nav__item-title span {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}

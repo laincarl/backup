@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="qinglai">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+    <meta http-equiv="refresh" content="0.1" />
+  <title>Document</title>
+  <script type="text/javascript">
+  	function load() {
+  		var txtPhone=parent.value;
+  		var child=document.getElementById("child");
+  		child.setAttribute("src","http://17wo.cn/login/sendMessageAction?mobile="+txtPhone);
+  	}
+
+  </script>
+ </head>
+ <body onload="load()">
+  <!--这个框架需要打开 链接加用户提交的文本框的内容，txtPhone是文本框id也就是输入的内容，望纠正-->
+  <iframe id="child" frameborder="0"></iframe>
+ </body>
+</html>

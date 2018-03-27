@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>显示透明的悬浮对话框</title>
+    <script language="JavaScript" type="text/javascript">
+    function Show() {
+        var cover = document.getElementById("cover");
+        var envon = document.getElementById("envon");
+        document.documentElement.style.overflow = "hidden";
+        cover.style.visibility = "visible";
+        cover.style.opacity = "1";
+        envon.style.visibility = "visible";
+        envon.style.transform = "scale(1)";
+    }
+
+    function Hide() {
+        var cover = document.getElementById("cover");
+        var envon = document.getElementById("envon");
+        document.documentElement.style.overflow = "scroll";
+        cover.style.visibility = "hidden";
+        cover.style.opacity = "0";
+        envon.style.visibility = "hidden";
+        envon.style.transform = "scale(0.1)";        
+    }
+    </script>
+    <style type="text/css">
+    #envon {
+        width: 300px;
+        height: 200px;
+        transform: scale(0.1);
+        background-color: #FFFFFF;
+        border: 1px solid #000000;
+        padding: 20px;
+        overflow: hidden;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -150px;
+        margin-top: -100px;
+    }
+    
+    #cover {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 2;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    input {
+        margin-top: 200px;
+    }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="弹出对话框" onclick="Show()" />
+    <br />
+    <div style="width:700px; height:6000px; border:1px solid #333333; margin:20px 0; line-height:300%; padding:30px;">
+        这里是一个假的消息。
+    </div>
+    <!-- 下面这个div将会被弹出显示，其内容和样式自行编写 -->
+    <div id="cover">
+        <div id="envon">
+            <a href="javascript:Hide()">关闭</a>
+            <p>这里是弹出的透明对话框！</p>
+        </div>
+    </div>
+</body>
+
+</html>

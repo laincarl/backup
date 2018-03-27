@@ -1,0 +1,21 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>画图练习</title>
+	<script type="text/javascript" src="jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="digit.js"></script>
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<canvas id="can" width="500px" height="500px"></canvas>
+	<script type="text/javascript">
+	var can=window.document.getElementById('can');
+	var cans=can.getContext('2d');
+	cans.arc(100,100,50,0,Math.PI*2,true);
+	cans.strokeStyle='red';
+	cans.stroke();
+	</script>
+</body>
+</html>

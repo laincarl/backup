@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    img {
+        max-width: 200px;
+        max-height: 200px;
+    }
+    </style>
+</head>
+
+<body>
+    <input type="file" name="" onchange="upload(event)">
+    <div>
+        <img src="" id="show">
+    </div>
+    <script type="text/javascript">
+    function upload(e) {
+        console.log(e);
+        console.log(e.target.files[0]);
+        let url = getObjectURL(e.target.files[0]);
+        console.log(url);
+        let ele = $("#show");
+        ele.src = url;
+    }
+
+    function $(selector) {
+        return document.querySelector(selector);
+    }
+
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) { // basic
+            url = window.createObjectURL(file);
+        } else if (window.URL != undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+    </script>
+</body>
+
+</html>

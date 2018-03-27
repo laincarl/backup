@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    body {
+        height: 2000px;
+    }
+
+    .pop {
+        width: 500px;
+        height: 500px;
+        position: fixed;
+        left: calc(50% - 250px);
+        top: calc(50% - 250px);
+        background: black;
+        /*opacity: 1;*/
+    }
+
+    .box {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000;
+        /*background-color: rgba(128, 128, 128, 0.5);*/
+        opacity: 0.2;
+    }
+    </style>
+</head>
+
+<body>
+    <button onclick="pop()">ss</button>
+    <script type="text/javascript">
+    function pop() {
+        var box = document.createElement("div");
+        var pop = document.createElement("div");
+
+        box.classList.add("box");
+        pop.classList.add("pop");
+        // box.appendChild(pop);
+
+        document.body.appendChild(box);
+        document.body.appendChild(pop);
+
+        document.body.style.overflow = "hidden";
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,803 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>版头征集Special·Fate特别篇 - 哔哩哔哩弹幕视频网 - ( ゜- ゜)つロ  乾杯~  - bilibili</title>
+		<meta name="description" content="" />
+<meta name="keywords" content="" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="http://static.hdslb.com/images/favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="http://static.hdslb.com/opensearch.xml" title="哔哩哔哩" />
+		
+		<link rel="stylesheet" href="http://static.hdslb.com/css/core-v5/page-core.css" type="text/css" />
+		<script type="text/javascript" src="http://static.hdslb.com/js/jquery.min.js"></script>
+		<script type="text/javascript" src="http://static.hdslb.com/js/core-v5/base.core.js"></script>
+		
+		
+		
+	</head>
+
+	<body>	
+		<div class="z_top">
+			<div class="z_header">
+				<div class="z_top_nav">
+					<ul>
+	<li class="home">
+		<a class="i-link" href="http://www.bilibili.com/"><span>主站</span></a>
+	</li>
+		<li class="hbili"><a class="i-link" href="http://h.bilibili.com/" title="画友">画友</a></li>
+	<li class="b-gc" hasframe="true">
+		<a class="i-link" href="http://game.bilibili.com/" title="游戏中心">游戏中心</a>
+		<div class="i_div game" data-frame="game"></div>
+	</li>
+		<li class="live" hasframe="true">
+		<a class="i-link" target="_blank" href="http://live.bilibili.com" title="直播">直播</a>
+		<div class="i_div stream" data-frame="stream"></div>
+	</li>
+	<li class="b-zb"><a class="i-link" target="_blank" href="http://zb.bilibili.com" title="周边">周边</a></li>
+	<li class="b-ml"><a class="i-link" target="_blank" href="http://bml.bilibili.com/index2016/?nav" title="BML">BML</a></li>
+	<li class="yoo" hasframe="true">
+		<a class="i-link" target="_blank" href="http://yoo.bilibili.com/index.html" title="日本游">日本游<em class="new"></em></a>
+		<div class="i_div travel" data-frame="travel"></div>
+	</li>
+</ul>
+				</div>
+				<div class="uns_box">
+	<ul class="menu">
+		<li id="i_menu_profile_btn" guest="no" class="u-i i_user" i_menu="#i_menu_profile">
+			<a class="i-link" href="http://space.bilibili.com/" target="_blank">
+				<img class="i_face">
+			</a>
+			<div id="i_menu_profile" class="i_menu">
+				<div class="i_menu_bg_t"></div>
+				<div class="info clearfix"><div class="uname"></div><div class="coin"></div></div>
+				<div class="member-menu-wrp">
+					<ul class="member-menu">
+						<li><a href="https://account.bilibili.com/site/home" target="_blank" class="account"><i class="b-icon b-icon-p-account"></i>个人中心</a></li>
+						<li><a href="http://member.bilibili.com/v/#!/article" target="_blank" class="member"><i class="b-icon b-icon-p-member"></i>投稿管理</a></li>
+						<li><a href="https://pay.bilibili.com/" target="_blank" class="wallet"><i class="b-icon b-icon-p-wallet"></i>我的钱包</a></li>
+						<li><a href="http://live.bilibili.com/i" target="_blank" class="live"><i class="b-icon b-icon-p-live"></i>直播中心</a></li>
+					</ul>
+				</div>
+				<div class="member-bottom">
+					<a class="logout" href="https://account.bilibili.com/login?act=exit">退出</a>
+				</div>
+			</div>
+		</li>
+		<li id="i_menu_community_msg_btn" guest="no" i_menu="community_msg" class="u-i">
+            <a class="i-link" href="http://message.bilibili.com" target="_blank">消息</a>
+        </li>
+		<li id="i_menu_msg_btn" guest="no" i_menu="#dyn_wnd" class="u-i">
+			<div class="num" id="dynamic_num_total"></div>
+			<a class="i-link" href="http://www.bilibili.com/account/dynamic" target="_blank">动态</a>
+		</li>
+		<li id="i_menu_fav_btn" guest="no" i_menu="#i_menu_fav" class="u-i">
+			<a class="i-link" href="http://space.bilibili.com/#!/favlist" target="_blank">收藏夹</a>
+		</li>
+		<li id="i_menu_history_btn" guest="no" class="u-i">
+			<a class="i-link" href="http://www.bilibili.com/account/history">历史</a>
+		</li>
+		<li id="i_menu_login_reg" guest="yes" class="u-i">
+			<a id="i_menu_login_btn" class="i-link login" href="https://account.bilibili.com/login"><span>登录</span></a><i class="s-line"></i><a id="i_menu_register_btn" class="i-link reg" href="https://www.bilibili.com/register"><span>注册</span></a>
+		</li>
+		<li class="u-i b-post">
+			<a class="i-link" href="http://member.bilibili.com/v/video/submit.html" target="_blank">投 稿</a>
+			<ul class="s-menu">
+				<li><a href="http://member.bilibili.com/v/video/submit.html" target="_blank"><i class="b-icon b-icon-vp"></i><em>视频投稿</em></a></li>
+				<li><a href="http://member.bilibili.com/v/#!/article" target="_blank"><i class="b-icon b-icon-vm"></i><em>投稿管理</em></a></li>
+				<li><a href="http://member.bilibili.com/v/" target="_blank"><i class="b-icon b-icon-vc"></i><em>创作中心</em></a></li>
+			</ul>
+		</li>
+	</ul>
+</div>			</div>
+		</div>
+
+		
+ <!-- 内容区 start -->
+<style>
+/* 微调获奖图片位置 */
+#prize3 .top20-block:first-child div.picture { background-position-x: 58%; }
+#prize3 .top20-block:first-child + .top20-block div.picture { background-position-x: 55%; }
+#prize3 .top20-block:first-child + .top20-block + .top20-block div.picture { background-position-x: 72.6%; }
+#prize20 .top20-block:first-child + .top20-block div.picture { background-position-x: 70%; }
+#prize20 .top20-block:first-child + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block div.picture { background-position-x: 54%; }
+#prize20 .top20-block:first-child + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block div.picture { background-position-x: 57%; }
+#prize20 .top20-block:first-child + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block div.picture { background-position-x: 60%; }
+#prize20 .top20-block:first-child + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block div.picture { background-position-x: 65%; }
+#prize20 .top20-block:first-child + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block div.picture { background-position-x: 67%; }
+#prize20 .top20-block:first-child + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block div.picture { background-position-x: 62%; }
+#prize20 .top20-block:first-child + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block + .top20-block div.picture { background-position-x: 60%; }
+        </style>
+    <!--/ 阶段不同引用不同css / ##### ##### ##### ##### ##### ##### ##### /-->
+    <link rel="stylesheet" href="http://activity.hdslb.com/zzjs/20160909bantou/src/rank.css" />
+    <style>
+.rule-prize {
+    position: relative;
+    width: 1160px;
+    height: 373px;
+    margin: 30px auto;
+}
+.rule-prize a.prize-gift {
+    width: 453px;
+    height: 226px;
+    display: block;
+    position: absolute;
+    right: 95px;
+    top: 65px;
+}
+.past-block .past-img {
+    position: relative;
+    float: left;
+    width: 500px;
+    height: 127px;
+    margin: 0 24px 25px;
+}
+    </style>
+
+    <!--/ 不同阶段的功能模块 / ##### ##### ##### ##### ##### ##### ##### /-->
+
+    <!-- 单个作品展示模板 start-->
+    <aside class="grid-module default-hidden">
+        <article class="grid-wrap show">
+            <div class="grid-item">
+                <div class="picture" lazy="y" style="opacity: 1; background-image: url();" data-src="">
+                    <div class="shadow">
+                        <div class="text-s">
+                            <div class="text-icon"></div>
+                            <div>查看完整作品</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="information">
+                    <div class="td-1">
+                        <div class="pic-user-info">
+                            <a class="drawyoo-space" href="http://h.bilibili.com/member?mod=space&uid=27368&act=p_index" target="_blank">
+                                <img class="user-avatar" src="http://i0.hdslb.com/bfs/face/74d6931f5abb019c6ec7f4910a00b4fbe1fc5dfb.jpg" alt="" />
+                                <div class="infor-name">
+                                    <p class="infor-txt">画师大大：</p>
+                                    <p class="user-name break-point text-overflow"></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="id-block">
+                            <p class="infor-txt">作品编号：</p>
+                            <p class="typeid text-overflow"></p>
+                        </div>
+                        <div class="infor-desc">
+                            <p class="infor-txt">作品简介：</p>
+                            <p class="msg" title=""></p>
+                        </div>
+                        <div class="button-list">
+                            <div class="button-share" rec-linkid='share-outer'><span class="button_icon1"></span>分享此作品</div>
+                            <div class="button-favour btn" rec-linkid='add-outer'>
+                                <span class="button_icon2"></span>
+                                <span class="favour-text">+1票</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="favour-area"><span class="favour-number">0</span>票</div>
+            </div>
+        </article>
+    </aside>
+    <!-- 单个作品展示模板 end-->
+
+    <!-- 弹层显示大图 start -->
+    <aside class="grid-preview default-hidden">
+        <article class="item">
+            <div class="vote-point">
+                <div class="text">作品得票数</div>
+                <div class="score"></div>
+            </div>
+
+            <div class="right-button-list">
+                <div class="close-button"></div>
+            </div>
+
+            <div class="picture">
+                <div class="outside">
+                    <div class="inside">
+                        <img style="position: absolute;top: 0;left: 0;" src="http://activity.hdslb.com/zzjs/20160909bantou/img/img_top.png" alt="" />
+                        <img class="banner" src="" alt="preview" />
+                        <img src="http://activity.hdslb.com/zzjs/20160909bantou/img/img_indexbg.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="information">
+                <div class="infor-box">
+                    <div class="pic-user-info">
+                        <a class="drawyoo-space name-enter" href="http://h.bilibili.com/member?mod=space&uid=27368&act=p_index" target="_blank">
+                            <img class="user-avatar" src="http://i0.hdslb.com/bfs/face/74d6931f5abb019c6ec7f4910a00b4fbe1fc5dfb.jpg" alt="" />
+                            <div class="infor-name">
+                                <p class="infor-txt">画师大大：</p>
+                                <p class="user-name break-point text-overflow"></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="id-block">
+                        <p class="infor-txt">作品编号：</p>
+                        <p class="typeid text-overflow"></p>
+                    </div>
+                    <div class="button-list">
+                        <a href="" target="_blank" class="dy">
+                            <div class="button button-review">
+                                <div class="review-icon"><span class="review-num">99</span></div>
+                                作品评论
+                            </div>
+                        </a>
+                        <div class="button button-share" rec-linkid="share-inner"><span></span>分享此作品</div>
+                        <!--div class="button button-favour btn" rec-linkid="add-inner">
+                            <span class="favour-icon"></span>
+                            <span class="favour-text">+1票</span>
+                        </div-->
+                        <div class="button-tip"><span class="tip-close"></span></div>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </aside>
+    <!-- 弹层显示大图 end -->
+
+    <!-- 右侧竖导航 start-->
+    <div class="ver_box">
+        <div class="nav_arrow"><span class="arrow_img"></span></div>
+        <div class="vertical_nav">
+            <div class="nav_block_search">
+                <input type="" name="" placeholder="输入作品编号搜索" class="nav_search">
+                <div class="nav_search_btn"><span></span></div>
+            </div>
+            <a href="#bantou_pic">
+                <div class="nav_block nav2">作品展示</div>
+            </a>
+            <a href="#bantou_rule">
+                <div class="nav_block nav3">活动规则</div>
+            </a>
+            <a href="#bantou_comm">
+                <div class="nav_block nav4">评论区</div>
+            </a>
+            <a href="javascript:;">
+                <div class="nav_block nav6 btn_share">分享</div>
+            </a>
+            <a href="#">
+                <div class="nav_block nav7">回到顶部</div>
+            </a>
+        </div>
+    </div>
+    <!-- 右侧竖导航 end-->
+
+    <div class="television-box">
+        <!-- 头部 start -->
+        <div class="t-banner start">
+            <div class="banner-body">
+                <div class="banner-title-pic">
+                </div>
+            </div>
+            <div class="banner-rule">
+                <div class="banner-block banner-block-left">
+                    <div class="banner-title">本期主题</div>
+                    <div class="banner-pic"></div>
+                    <div class="banner-s-block">
+                        <div class="s-title">本期关键词</div>
+                        <div class="s-text big">
+                            <div class="t-tag">
+                                <div class="tag-icon"></div>Fate</div>
+                            <div class="t-tag">
+                                <div class="tag-icon"></div>英灵</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-block banner-block-right" style="">
+                    <div class="banner-title">本期时间节点</div>
+                    <div class="banner-time-line clearfix">
+                        <div class="time-line-block time-line-block0">
+                            <div class="title">投稿期</div>
+                            <div class="time">9.19 <span></span> 9.25</div>
+                            <div class="p-arrow"><img src="http://activity.hdslb.com/zzjs/20160909bantou/img/gif_moving.gif" alt="" /></div>
+                        </div>
+                        <div class="time-line-block time-line-block1">
+                            <div class="title">投票期</div>
+                            <div class="time">9.21 <span></span> 9.27</div>
+                            <div class="p-arrow"><img src="http://activity.hdslb.com/zzjs/20160909bantou/img/gif_moving.gif" alt="" /></div>
+                        </div>
+                        <div class="time-line-block time-line-block2">
+                            <div class="title">TOP20展示</div>
+                            <div class="time">9.30 <span></span> 10.2</div>
+                            <div class="p-arrow"><img src="http://activity.hdslb.com/zzjs/20160909bantou/img/gif_moving.gif" alt="" /></div>
+                        </div>
+                        <div class="time-line-block time-line-block3">
+                            <div class="title">结果公示</div>
+                            <div class="time">10.3 <span></span> 10.5</div>
+                        </div>
+                    </div>
+                    <div class="banner-s-block" style="width: 95%">
+                        <div class="s-title">本期简介</div>
+                        <div class="s-text">
+                            <p>版头征集特别篇！Fate来袭！还记得那一场场惊心动魄的圣杯战争吗，你希望一打开bilibili就能看到你的servant，“遵从召唤而来”吗？</p>
+                            <p>不要犹豫，拿起你手中的画笔，描绘出你心中英灵的英姿吧~</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banner-share">
+                    <div class="text">分享给你身边的Fate厨</div>
+                    <div class="share-area" id="bantou">
+                        <div class="share-btn l-1" data-id="btn_weibo"></div>
+                        <div class="share-btn l-2" data-id="btn_weixin"></div>
+                        <div class="share-btn l-3" data-id="btn_qqzone"></div>
+                        <div class="share-btn l-4" data-id="btn_baidu"></div>
+                        <div id="nav-arr" class="arr switch"></div>
+                    </div>
+                </div>
+                <div class="button-list">
+                    <a href="#bantou_rule">
+                        <div class="dl-button">
+                            <span></span> 查看详细规则
+                        </div>
+                    </a>
+                    <a href="http://h.bilibili.com/upload.html?mod=new&mid=38" target="_blank">
+                        <div class="upload-button">
+                            <span></span> 投稿
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 头部 end -->
+
+
+
+        <!-- 评委和参赛流程 start-->
+        <div class="rater-block">
+            <!-- ##### Winning-block -->
+            <div class="rater-info">
+                <div class="rater-title"></div>
+                <div class="rater-man">
+                    <div class="rater-1">
+                        <div class="rater-img">
+                            <img src="http://activity.hdslb.com/zzjs/20160909bantou/img/img_jugg1.jpg" alt="">
+                        </div>
+                        <div class="rater-txt1">
+                            <p class="rater-p1">官方画师团</p>
+                            <p class="rater-p2">来自哔哩哔哩幕后画师的专业点评</p>
+                        </div>
+                    </div>
+                    <div class="rater-2">
+                        <div class="rater-img">
+                            <img src="http://activity.hdslb.com/zzjs/20160909bantou/img/img_jugg2.jpg" alt="">
+                        </div>
+                        <div class="rater-txt1">
+                            <p class="rater-p1">学长学姐团</p>
+                            <p class="rater-p2">来自版头征集历届优胜者的贴心建议</p>
+                        </div>
+                    </div>
+                    <div class="rater-3">
+                        <div class="rater-img">
+                            <img src="http://activity.hdslb.com/zzjs/20160909bantou/img/img_jugg3.jpg" alt="">
+                        </div>
+                        <div class="rater-txt1">
+                            <p class="rater-p1">观众团</p>
+                            <p class="rater-p2">来自活动评论区的优秀点评及有趣表白也会被挑选登录页面啦</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- div class="example-block">
+            <div class="example-title"></div>
+            <div class="example-pic"></div>
+        </div-->
+        <!-- 评委和参赛流程 end-->
+        <!-- ##### -->
+        <!-- top 20 展示 start-->
+        <!-- div class="top-20-box">
+            <div class="top-20-title" id="top-20-title"></div>
+            <div style="font-size:14px;color:#183fa2;text-align:center;margin-top:13px;margin-bottom: 60px">作品依据投票选出，按随机排序显示</div>
+            <div class="top-20 content">
+            </div>
+        </div-->
+        <!-- top 20 展示 end-->
+
+        <!-- 前20名依次展示 start-->
+        <div class="top-block clearfix" id="top-block">
+            <!-- 优胜奖 1 ~ 3 -->
+            <div id="prize3">
+                <div class="title"></div>
+                <div class="content"></div>
+            </div>
+            <!-- 优胜奖 1 ~ 3 end -->
+            <!-- 优秀奖 4 - 20 -->
+            <div id="prize20">
+                <div class="title"></div>
+                <div class="content"></div>
+            </div>
+            <!-- 优秀奖 4 - 20 end -->
+        </div>
+        <!-- 前20名依次展示 end-->
+
+
+        <!-- 作品展示 start -->
+        <div class="t-works" id="bantou_pic">
+            <div class="title work_title"></div>
+            <div class="count">
+                <div class="block-c">
+                    <div class="text">参赛人数：</div>
+                    <div class="numb"></div>
+                </div>
+            </div>
+            <div class="t-nav">
+                <section class="switchover">
+                    <nav class="nav-1 nav-left">
+                        <div class="sortord random point" value="randomSort"><span></span>随机排序</div>
+                        <div class="sortord default " value="newSort">最新投稿</div>
+                        <div class="sortord favour" value="zanSort">票数排行</div>
+                    </nav>
+                    <nav class="nav-2 nav-right">
+                        <div class="search">
+                            <input type="text" placeholder="通过作品编号搜索">
+                            <div class="search_button">搜索</div>
+                        </div>
+                        <div class="sortord oneself">查看我的投稿</div>
+                    </nav>
+                    <div class="clearfix"></div>
+                </section>
+            </div>
+            <article class="interaction clearfix">
+                <!-- 作品 -->
+                <article class="content"></article>
+                <!-- <div class="work-more">展开更多作品</div> -->
+                <nav class="page-nav">
+                    <ul class="paging"></ul>
+                </nav>
+            </article>
+        </div>
+        <!-- 作品展示 end -->
+        <!-- ##### -->
+        <!-- 参赛须知 -->
+        <div class="rule-block">
+            <div class="title" id="bantou_rule"></div>
+            <!-- ##### <div class="title" id="rule"></div> -->
+            <div class="text-block">
+                <div class="text-m" style="width:50%;">
+                    <div class="title-m">活动规则</div>
+                    <div class="text">
+                        <p>1. 以征集形式收集用户投稿，并在活动期间面向全站用户收集投票。</p>
+                        <p>2. 投票期结束后将获票数TOP20的作品进行公示三天，同时由后台工作人员计算最后得分（总票数*权重+官方画师评分）选出最终入选版头的三幅作品。</p>
+                        <p>3. 结果公示的优胜奖作品依序各占领官方主页版头一整天。</p>
+                        <p>4. 要求原创作品，禁止抄袭；请勿带有商业推广意图的广告内容、不和谐等画面元素。画面要求无个人信息、无水印，禁止出现任何与活动主题无关的的信息如个人姓名、网址链接、二维码、qq号等。</p>
+                        <p>5. 禁止违反国家法律法规及相关规定；曾经参加过其他设计竞赛并获奖或为第三方服务设计的方案不得参赛。</p>
+                        <p>6. 投稿时间为：2016年9月19日12:00——2016年9月25日24：00</p>
+                        <p>7. <span>用户在画站删除参赛作品不会影响活动前台展示，如有删除作品的需要请邮件联系客服。同一个作品不可以重投，请谨慎投稿。</span></p>
+                        <p>8. <span>每位用户可投多幅作品</span>，但只可获得一次奖励，如同时获得多个，以最高奖励为准。</p>
+                        <p>9. 如有任何不明白的地方，欢迎加入哔哩哔哩画友②群 553952745</p>
+                        <p>10. 本活动最终解释权归哔哩哔哩所有。如有问题请联系help@bilibili.com</p>
+                    </div>
+                </div>
+
+                <div class="text-m" style="width:40%;">
+                    <div class="title-m">绘制规范</div>
+                    <div class="text">
+                        <p style="font-size: 16px;color: #000000">1.主题要求：</p>
+                        <div style="padding-left: 10px">
+                            <p>a. 画面内容符合本期征集主题</p>
+                            <p>b. 需以<span>Fate系列中出现过的英灵</span>为主视觉，并在上传时注明英灵的名字，不可原创英灵</p>
+                            <p>c. 如绘制22、33娘作为辅助角色，双子必须同时出现，需符合其人物设定(人物设定见版头规范文档)，服饰可适当更改，但不可大量替换以致影响辨识度（如修改瞳色、发色等）</p>
+                            <p>d. 绘制符合主题的bilibili logo。（注，创作过程中请将LOGO请放在独立图层。便于后期分离）</p>
+                            <p>e. 绘制时请注意遮挡区域，避免出现绘画主体被<span>logo</span>或<span>搜索框</span>遮挡的情况</p>
+                        </div>
+                        <br />
+                        <p style="font-size: 16px;color: #000000">2.尺寸要求（尺寸具体说明请见规范文档）：</p>
+                        <div style="padding-left: 10px">
+                            <p>a. 版头背景图：1920px * 180px</p>
+                            <p>b. 版头配套LOGO：220px * 100px</p>
+                        </div>
+                        <a href="http://activity.hdslb.com/zzjs/20160909bantou/bilibili-topimage-rule.zip" target="_blank">
+                            <div class="download-button">
+                                <span class="download-button-icon"></span> 下载规范文档
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 奖品和往期回顾 -->
+
+        <div class="prize-title"></div>
+        <div class="rule-prize"><img src="http://activity.hdslb.com/zzjs/20160909bantou/img/gif_row1.png" alt=""></div>
+        <div class="rule-prize">
+            <img src="http://activity.hdslb.com/zzjs/20160909bantou/img/gif_row2.png" alt="">
+            <a class="prize-gift" target="_blank" href="http://fgo.biligame.com/"><img src="http://activity.hdslb.com/zzjs/20160909bantou/img/ios-online.jpg" alt="" /></a>
+        </div>
+        <div class="past-activity">
+            <div class="past-title"></div>
+            <div class="past-block">
+                <div class="past-img">
+                    <a href="http://www.bilibili.com/html/activity-topimage-1st.html" target="_blank">
+                        <img src="http://activity.hdslb.com/zzjs/20160909bantou/img/entre_act1.png" alt="">
+                        <div class="shadow"></div>
+                    </a>
+                </div>
+                <div class="past-img">
+                    <a href="http://www.bilibili.com/html/activity-topimage-2nd.html" target="_blank">
+                        <img src="http://activity.hdslb.com/zzjs/20160909bantou/img/entre_act2.png" alt="">
+                        <div class="shadow"></div>
+                    </a>
+                </div>
+                <div class="past-img">
+                    <a href="http://www.bilibili.com/html/activity-topimage-3th.html" target="_blank">
+                        <img src="http://activity.hdslb.com/zzjs/20160909bantou/img/entre_act3.jpg" alt="">
+                        <div class="shadow"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 内容区 end -->
+
+    <!-- 主站分享开始 -->
+    <div class="main-inner">
+        <div class="topic-box">
+            <div class="arc-toolbar topic">
+                <div class="block share initialized">
+                    <div class="t">
+                        <i class="b-icon b-icon-a b-icon-anim-share" title="分享" style="display: block; width: 80px; height: 80px; background-image: url('http://static.hdslb.com/images/base/anim-share.png');"></i>
+                        <div class="t-right">
+                            <span class="t-right-top middle">分享</span>
+                            <span class="t-right-bottom"></span>
+                        </div>
+                    </div>
+                    <div class="share-box" id="share_list">
+                        <div class="share-left">
+                            <div class="share-list">
+                                <div class="share-btn b-icon b-icon-share weibo" id="btn_weibo" title="分享到微博"></div>
+                                <div class="share-btn b-icon b-icon-share tieba" id="btn_baidu" title="分享到贴吧"></div>
+                                <div class="share-btn b-icon b-icon-share qzone" id="btn_qqzone" title="分享到QQ空间"></div>
+                            </div>
+                            <div class="share-time">
+                            </div>
+                            <div class="share-head">将视频贴到博客或论坛</div>
+                            <ul class="share-address-list">
+                                <li class="share-address">
+                                    <label>视频地址</label>
+                                    <input type="text" name="video_address" id="link0" readonly="" value="http://www.bilibili.com/html/activity-topimage-fgo.html"><span class="address-copy">复制</span></li>
+                            </ul>
+                        </div>
+                        <div class="share-right">
+                            <div class="share-head">扫一扫分享到微信</div>
+                            <div class="share-btn" id="btn_weixin" title="扫一扫 分享到微信"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block fav">
+                    <div class="t fav_btn">
+                        <i class="b-icon b-icon-a b-icon-anim-fav" title="收藏" style="display: block; width: 80px; height: 80px; background-image: url('http://static.hdslb.com/images/base/anim-fav.png');"></i>
+                        <div class="t-right">
+                            <span class="t-right-top">收藏</span>
+                            <span class="t-right-bottom"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="box-body" id="bantou_comm">
+        <div class="comment-container">
+            <!--评论-->
+            <div class="common">
+                <div class="b-head"><span class="b-head-t results"></span><span class="b-head-t">评论</span></div>
+                <div class="comm">
+                    <div id="load_comment" class="comm_open_btn" style="cursor:pointer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.aid = 6211911;
+        var baseUrl = 'http://www.bilibili.com/plus/widget/missionQixi.php?mission=38'; // 正式id=38
+        var shareUrl = 'http://www.bilibili.com/html/activity-topimage-fgo.html';
+    </script>
+    <script type="text/javascript" src="http://static.hdslb.com/js/core-v5/page.count.js"></script>
+    <script type="text/javascript" src="http://static.hdslb.com/js/core-v5/page.arc.js"></script>
+    <script type="text/javascript" src="http://static.hdslb.com/js/jquery.zclip.min.js"></script>
+    <script type="text/javascript" src="http://interface.bilibili.com/serverdate.js"></script>
+
+    <script type="text/javascript">
+        // 页面分享文案（3种文案）
+
+        // 征集＋投票期 的文案
+        // var shareText = '#哔哩哔哩版头征集# Special·Fate特别篇！你希望一打开bilibili就能看到你的servant，“遵从召唤而来”吗？不要犹豫，拿起你手中的画笔，描绘出你心中英灵的英姿吧~';
+        // TOP＃20 的文案
+        var shareText = '#哔哩哔哩版头征集#Special·Fate特别篇TOP20作品出炉！快来看看你喜欢的作品有没有上榜？';
+        // 公布结果 的文案
+        // var shareText = '#哔哩哔哩版头征集#Special·Fate特别篇结果公布！快来看看这回的头牌画师花落谁家？';
+
+
+        // 作品分享文案
+        var share_text = '我想用这幅作品占领B站版头！支持一下吧！#哔哩哔哩版头征集#';
+
+
+        $(document).ready(function () {
+            bindShare({ //外部函数
+                url: window.location.href,
+                title: shareText,
+                pic: 'http://activity.hdslb.com/zzjs/20160909bantou/img/share_bantou.jpg',
+                desc: shareText,
+                summary: '',
+                shortTitle: document.title,
+                searchPic: 'false'
+            }, '#share_list .share-btn , #bantou .share-btn');
+
+            window.__GetUrlValue = function (name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) {
+                    try {
+                        return decodeURIComponent(r[2]);
+                    } catch (e) {
+                        return null;
+                    }
+                }
+                return null;
+            }
+
+            function timeChange() {
+                // 给测试用的本地时间
+                if (__GetUrlValue('test_time')) {
+                    var date = new Date().getTime();
+                } else {
+                    var date = new Date(serverdate).getTime();
+                }
+
+                var date0 = new Date('2016/9/19 00:00:00').getTime();
+                var date1 = new Date('2016/9/26 00:00:00').getTime();
+
+                var date2 = new Date('2016/9/21 00:00:00').getTime();
+                var date3 = new Date('2016/9/28 00:00:00').getTime();
+
+                var date4 = new Date('2016/9/30 00:00:00').getTime();
+                var date5 = new Date('2016/10/3 00:00:00').getTime();
+
+                var date6 = new Date('2016/10/03 00:00:00').getTime();
+                var date7 = new Date('2016/10/06 00:00:00').getTime();
+
+                var datahide = new Date('2016/9/26 00:00:00').getTime();
+
+                if (date >= date0 && date < date1) {
+                    $('.time-line-block0').addClass('active');
+                }
+
+                if (date >= date2 && date < date3) {
+                    $('.time-line-block').removeClass('active');
+                    $('.time-line-block1').addClass('active');
+                }
+
+                if (date >= date4 && date < date5) {
+                    $('.time-line-block2').addClass('active');
+                }
+                if (date >= date6) {
+                    $('.time-line-block3').addClass('active');
+                }
+
+                if(date >= datahide) {
+                    $('.upload-button').css('display', 'none');
+                }
+            }
+            timeChange();
+        });
+    </script>
+    
+    <!--/ 阶段不同引用不同css / ##### ##### ##### ##### ##### ##### ##### /-->
+    <script type="text/javascript" src="http://static.hdslb.com/mstation/monkey/biliPager/js/biliPager.min.js"></script>
+    <script type="text/javascript" src="http://activity.hdslb.com/zzjs/20160909bantou/src/rank.js"></script>
+
+<div class="footer">
+	<div class="footer-wrp">
+		<div class="footer-cnt clearfix">
+			<ul class="boston-postcards">
+				<li>
+					<div class="tips">Bilibili</div>
+					<div class="cards"><a target="_blank" href="http://www.bilibili.com/html/aboutUs.html">关于我们</a></div>
+					<div class="cards"><a target="_blank" href="http://www.bilibili.com/html/friends-links.html">友情链接</a></div>
+					<div class="cards"><a target="_blank" href="http://zb.bilibili.com/">哔哩哔哩周边</a></div>
+					<div class="cards"><a target="_blank" href="http://www.bilibili.com/html/contact.html">联系我们</a></div>
+					<div class="cards"><a target="_blank" href="http://www.bilibili.com/html/join.html">加入我们</a></div>
+				</li>
+				<li>
+					<div class="tips">传送门</div>
+					<div class="cards"><a target="_blank" href="http://www.bilibili.com/html/help.html">帮助中心</a></div>
+					<div class="cards"><a target="_blank" href="http://www.bilibili.com/video/av120040/">高级弹幕</a></div>
+					<div class="cards"><a target="_blank" href="http://www.bilibili.com/event">活动专题页</a></div>
+					<div class="cards"><a target="_blank" href="http://www.bilibili.com/html/copyright.html">侵权申诉</a></div>
+					<div class="cards"><a target="_blank" href="https://account.bilibili.com/answer/addq">分院帽计划</a></div>
+					<div class="cards"><a target="_blank" href="http://activity.bilibili.com/">活动中心</a></div>
+					<div class="cards"><a target="_blank" href="http://www.bilibili.com/html/contact.html">建议/BUG汇报</a></div>
+					<div class="cards"><a target="_blank" href="http://h.bilibili.com/wallpaper?action=list">壁纸站</a></div>
+					<div class="cards"><a target="_blank" href="http://www.bilibili.com/html/cele.html">名人堂</a></div>
+				</li>
+				<li>
+					<div class="block right">
+						<a target="_blank" href="http://app.bilibili.com/">
+							<div class="phone">
+								<div class="pic"></div>
+								<em>手机端下载</em>
+								<div class="qrcode-box-wrp">
+									<div class="qrcode-box qrcode-app">
+										<div class="qrcode-box-arrow">
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						<a target="_blank" href="http://weibo.com/bilibiliweb">
+							<div class="weibo">
+								<div class="pic"></div>
+								<em>新浪微博</em>
+								<div class="qrcode-box-wrp">
+									<div class="qrcode-box qrcode-weibo">
+										<div class="qrcode-box-arrow">
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						<a id="weixin">
+							<div class="weixin">
+								<div class="pic"></div>
+								<em>官方微信</em>
+								<div class="qrcode-box-wrp">
+									<div class="qrcode-box qrcode-weixin">
+										<div class="qrcode-box-arrow">
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<div class="partner">
+				<div class="block left">
+					<div class="partner-banner"></div>
+				</div>
+				<div class="block left" style="margin: 0 0 0 20px;">
+					<p>广播电视节目制作经营许可证：<span>（沪）字第1248号 </span></p>
+					<p>网络文化经营许可证：<span>沪网文[2013]0480-056号</span></p>
+					<p>信息网络传播视听节目许可证：<span>0910417</span></p>
+				</div>
+				<div class="block left" style="margin: 0 0 0 20px;">
+					<p>互联网ICP备案：<span>沪ICP备13002172号-3</span></p>
+					<p>沪ICP证：<span>沪B2-20100043</span></p>
+				</div>
+				<div class="block right" style="width: 274px;">
+					<p>违法不良信息举报邮箱：<span>help@bilibili.com</span></p>
+					<p>违法不良信息举报电话：<span>4000233233 转 3</span></p>
+					<p><a href="http://www.shjbzx.cn" target="_blank"><i class="icons-footer icons-footer-report"></i><span>上海互联网举报中心</span></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+		
+		<script type="text/javascript">loadLoginStatus();</script>
+		<div style="display:none;">
+		<script type="text/javascript">
+		$(function(){
+			$.ajax({ url: 'http://data.bilibili.com/rec.js',cache: true,dataType:'script'});
+			$('<scr'+'ipt type="text/javascript" src="http://static.hdslb.com/js/bfd.js" charset="UTF-8"></scri'+'pt>').appendTo('body');	
+			$('<scr'+'ipt type="text/javascript" src="http://s11.cnzz.com/stat.php?id=2724999&web_id=2724999" charset="UTF-8"></scri'+'pt>').appendTo('body');	
+			$('<scr'+'ipt type="text/javascript" src="http://tajs.qq.com/stats?sId=9156259" charset="UTF-8"></scri'+'pt>').appendTo('body');	
+		});
+		</script>
+		</div>
+		
+		
+	</body>
+</html>

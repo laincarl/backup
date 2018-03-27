@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    ul {
+        list-style: none;
+        margin: 0 200px;
+        font-size: 0;
+    }
+
+    .ele {
+        font-size: 16px;
+        width: 100px;
+        height: 40px;
+        border: 1px solid #999;
+        background: #EA6E59;
+        margin: 2px 0;
+        border-radius: 10px;
+        padding-left: 10px;
+        color: white;
+        cursor: move;
+    }
+    </style>
+</head>
+
+<body>
+    <ul id="container">
+        <li class="ele" draggable="true">1</li>
+        <li class="ele" draggable="true">2</li>
+        <li class="ele" draggable="true">3</li>
+        <li class="ele" draggable="true">4</li>
+        <li class="ele" draggable="true">5</li>
+        <li class="ele" draggable="true">6</li>
+        <li class="ele" draggable="true">7</li>
+        <li class="ele" draggable="true">8</li>
+    </ul>
+    <script type="text/javascript">
+    var node = document.querySelector("#container");
+
+    // var container = document.querySelector(".container");
+    // console.log(nodes);
+    var draging = null;
+
+    node.ondragstart = function(event) {
+        //console.log("start");
+        event.dataTransfer.setData("te", event.target.innerText); //不能使用text，firefox会打开新tab
+        //event.dataTransfer.setData("self", event.target);
+
+        draging = event.target;
+        //console.log(event.target);
+    }
+
+    node.ondrop = function(event) {
+
+        //console.log("onDrop");
+        var text = event.dataTransfer.getData("te");
+        event.preventDefault();
+    }
+    // document.ondrop = function(event) {
+    //     alert("document");
+    //     event.preventDefault();
+
+    // }
+    // document.documentElement.ondrop = function(event) {
+    //     alert("documentElement");
+    //     event.preventDefault();
+
+    // }
+    node.ondragover = function(event) {
+        //console.log("onDrop over");
+        event.preventDefault();
+        // event.stopPropagation();
+
+        var target = event.target;
+        if (target.nodeName === "LI") {
+            //console.log(target);
+            if (target !== draging) {
+                var targetRect = target.getBoundingClientRect();
+                var dragingRect = draging.getBoundingClientRect();
+                if (target) {
+                    if (target.animated) {
+                        return;
+                    }
+                }
+                if (_index(draging) < _index(target)) {
+                    target.parentNode.insertBefore(draging, target.nextSibling);
+                } else {
+                    target.parentNode.insertBefore(draging, target);
+                }
+                _animate(dragingRect, draging);
+                _animate(targetRect, target);
+            }
+        }
+    }
+
+    // event.stopPropagation();
+
+
+    // node.ondragenter = function(event) {
+    //     console.log("onDrop enter");
+    //     //this.style.background = "blue";
+    //     event.preventDefault();
+    // }
+
+    // node.ondragleave = function(event) {
+    //     console.log("onDrop leave");
+    //     //this.style.background = "red";
+
+    //     event.preventDefault();
+    // }
+
+    // node.ondragend = function(event) {
+    //     console.log("onDrop end");
+
+
+    //     event.preventDefault();
+    // }
+
+
+
+    function _index(el) {
+        var index = 0;
+
+        if (!el || !el.parentNode) {
+            return -1;
+        }
+
+        while (el && (el = el.previousElementSibling)) {
+            //console.log(el);
+            index++;
+        }
+
+        return index;
+    }
+
+    function _animate(prevRect, target) {
+        var ms = 300;
+
+        if (ms) {
+            var currentRect = target.getBoundingClientRect();
+
+            if (prevRect.nodeType === 1) {
+                prevRect = prevRect.getBoundingClientRect();
+            }
+
+            _css(target, 'transition', 'none');
+            _css(target, 'transform', 'translate3d(' +
+                (prevRect.left - currentRect.left) + 'px,' +
+                (prevRect.top - currentRect.top) + 'px,0)'
+            );
+
+            target.offsetWidth; // repaint
+            //放在timeout里面也可以
+            // setTimeout(function() {
+            //     _css(target, 'transition', 'all ' + ms + 'ms');
+            //     _css(target, 'transform', 'translate3d(0,0,0)');
+            // }, 0);
+            _css(target, 'transition', 'all ' + ms + 'ms');
+            _css(target, 'transform', 'translate3d(0,0,0)');
+
+            clearTimeout(target.animated);
+            target.animated = setTimeout(function() {
+                _css(target, 'transition', '');
+                _css(target, 'transform', '');
+                target.animated = false;
+            }, ms);
+        }
+    }
+
+    function _css(el, prop, val) {
+        var style = el && el.style;
+
+        if (style) {
+            if (val === void 0) {
+                if (document.defaultView && document.defaultView.getComputedStyle) {
+                    val = document.defaultView.getComputedStyle(el, '');
+                } else if (el.currentStyle) {
+                    val = el.currentStyle;
+                }
+
+                return prop === void 0 ? val : val[prop];
+            } else {
+                if (!(prop in style)) {
+                    prop = '-webkit-' + prop;
+                }
+
+                style[prop] = val + (typeof val === 'string' ? '' : 'px');
+            }
+        }
+    }
+    // document.addEventListener("drop", function(event) {
+    //     event.preventDefault(); //禁止浏览器默认行为
+    //     // alert("document");
+    //     return false; //禁止浏览器默认行为
+    // }, false);
+    </script>
+</body>
+
+</html>

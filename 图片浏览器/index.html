@@ -1,0 +1,166 @@
+<!DOCTYPE html><meta charset="UTF-8"/>
+<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+
+.smallpic{
+	
+	max-width: 90px;
+	max-height: 90px;
+}
+.vertical-container {
+    
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid green; 
+  flex: vertical-container;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid gray; 
+}
+.container {
+  border: 0px solid yellow; 
+  display: -webkit-flex;
+  display: flex;
+  
+  margin: 20px auto;
+  width: 990px;
+  height: 100px;
+}
+.initial {
+  -webkit-flex: initial;
+          flex: initial;
+  width: 200px;
+  min-width: 100px;
+}
+.ss{
+	display:flex;
+    align-items: center;
+    justify-content: center;
+    flex: vertical-container;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+     
+}
+.bigpic{
+	max-width: 800px;
+	max-height: 500px;
+}
+.left{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-flex: vertical-container;
+  flex: vertical-container;
+  margin: 0 auto;
+  height: 500px;
+  width: 100px;
+
+}
+.right{
+	display:flex;
+  	align-items: center;
+  	justify-content: center;
+     -webkit-flex: vertical-container;
+    flex: vertical-container;
+	margin: 0 auto;
+	height: 500px;
+	width: 100px;
+
+}
+.containerbig{
+  
+  display: -webkit-flex;
+  display: flex;
+  border: 1px solid gray; 
+  margin: 8px auto;
+  width: 1000px;
+  height: 500px;
+}
+</style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+</head>
+<body text-align:center onload="init(current)">
+<div class="containerbig">
+<div class="left" id="btnleft"><img  src="leftbig.png"></div>
+<div class="ss"><img id="bigpic" class="bigpic" src="pic.jpg"></div>
+<div class="right" id="btnright"><img  src="rightbig.png"></div>
+</div>
+<div class="container">
+<div class="vertical-container"><img id="201601" class="smallpic" src="pic.jpg"></div>
+<div class="vertical-container"><img id="201602" class="smallpic" src="pic2.jpg"></div>
+<div class="vertical-container"><img id="201603" class="smallpic" src="pic3.jpg"></div>
+<div class="vertical-container"><img id="201604" class="smallpic" src="pic4.jpg"></div>
+<div class="vertical-container"><img id="201605" class="smallpic" src="pic5.jpg"></div>
+<div class="vertical-container"><img id="201606" class="smallpic" src="pic6.jpg"></div>
+<div class="vertical-container"><img id="201607" class="smallpic" src="pic7.jpg"></div>
+<div class="vertical-container"><img id="201608" class="smallpic" src="pic8.jpg"></div>
+<div class="vertical-container"><img id="201609" class="smallpic" src="pic9.jpg"></div>
+</div>
+
+<script type="text/javascript">
+	var current=201601;
+	function init(current){
+
+		$('#'+current).parent().css("border","2px solid blue");
+
+	}
+	function back(current){
+		$('#'+current).parent().css("border","1px solid gray");
+	}
+	function leftback(current){
+		current++;
+
+		$('#'+current).parent().css("border","1px solid gray");
+
+	}
+	function rightback(current){
+		current--;
+		$('#'+current).parent().css("border","1px solid gray");
+
+	}
+	$("#btnleft").click(
+		function(){
+		//alert(current);
+		if(current>201601){
+			current--;
+			//alert(current);
+			$("#bigpic").attr("src",$('#'+current).attr("src"));
+			//alert(current);
+			leftback(current);
+			init(current);
+		}
+	}
+		);
+	$("#btnright").click(
+		function(){
+		//alert(current);
+		if(current<201609){
+			current++;
+			//alert(current);
+			$("#bigpic").attr("src",$('#'+current).attr("src"));
+			//alert(current);
+			rightback(current);
+			init(current);
+		}
+	}
+		);
+	$(".vertical-container").click(
+		function(){
+
+		back(current);
+		$("#bigpic").attr("src",$(this).children("img").attr("src"));
+		current=$(this).children("img").attr("id");
+		$(this).css("border","2px solid blue")
+		//alert(current);
+	});
+</script>
+</body>
+</html>
+

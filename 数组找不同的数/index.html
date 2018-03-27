@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    /**
+     * @param {number} num
+     * @return {string[]}
+     */
+    //  Input: n = 1 
+    // Return: ["1:00", "2:00", "4:00", "8:00", "0:01", "0:02", "0:04", "0:08", "0:16", "0:32"]
+    var readBinaryWatch = function(num) {
+        var time = "0:00";
+        var hours = [8, 4, 2, 1];
+        var minutes = [32, 16, 8, 4, 2, 1];
+        for (var i = 0; i <= num; i++) {
+            //console.log(hours[i]);
+
+        }
+        
+        return C(hours, 3);
+    };
+    
+    function C(arr, num) {
+        var r = [];
+        (function f(t, a, n) {
+            if (n == 0) {
+                return r.push(t);
+            }
+            for (var i = 0, l = a.length; i <= l - n; i++) {
+                f(t.concat(a[i]), a.slice(i + 1), n - 1);
+                //console.log(t)
+            }
+        })([], arr, num);
+        return r;
+    }
+
+    console.log(readBinaryWatch(3));
+    </script>
+</body>
+
+</html>

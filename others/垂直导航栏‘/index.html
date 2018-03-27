@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="javascript" />
+<meta name="description" content="Helloweba演示平台，演示XHTML、CSS、jquery、PHP案例和示例" />
+<title>演示：漂亮的垂直导航样式</title>
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/component.css">
+<style>
+.section {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.section--nav {
+	position: relative;
+	overflow: hidden;
+	-webkit-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+}
+
+.section__title {
+	font-size: 0.65em;
+	font-weight: 700;
+	-webkit-flex: none;
+	flex: none;
+	margin: 3em 0 15em;
+	text-indent: 3px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: #d1d1d1;
+}
+
+.section.section--intro {
+	font-size: 1.6em;
+	position: relative;
+	min-height: 100vh;
+	text-align: center;
+	color: #fff;
+	background: #333;
+}
+
+.section--intro p {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 1em;
+}
+
+/* Mockup Slider */
+.mockup-slider {
+	position: relative;
+	width: calc(100% - 12em);
+	margin: 0 0 0 2em;
+	max-width: 600px;
+}
+
+.mockup-slider::before,
+.mockup-slider::after {
+	content: '';
+	width: 100%;
+	background: rgba(0,0,0,0.05);
+	height: 100px;
+	position: absolute;
+	top: 0;
+}
+
+.mockup-slider::after {
+	top: auto;
+	bottom: 0;
+}
+
+.mockup-slider img {
+	position: relative;
+	display: block;
+	max-width: 100%;
+	margin: 150px 0;
+	box-shadow: 0 10px 20px -4px rgba(0,0,0,0.6);
+}
+
+.mockup-slider__title {
+	position: absolute;
+	font-size: 3em;
+	bottom: 30%;
+	left: -0.5em;
+	font-weight: normal;
+	margin: 0;
+}
+
+.mockup-slider__subtitle {
+	position: absolute;
+	top: 70%;
+	left: -1em;
+	background: #1b3050;
+	margin: 0;
+	color: #fff;
+	font-size: 1.05em;
+	padding: 0.25em 0.5em;
+	z-index: 100;
+}
+/* Individual section colors */
+
+
+/* Beca */
+.section#Beca {
+	 background: #a7a7a7;
+	 color: #ffeb3b;
+	 min-height: 510px;
+}
+
+.section#Beca .mockup-slider {
+	margin: 0 0 0 -9em;
+	min-height: 510px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+	<header>
+		
+	</header>
+	<div class="row main" style="min-height:500px">
+		<div class="col-md-12">
+			<h2 class="top_title"><span class="glyphicon glyphicon-menu-left" aria-hidden="true">
+			
+	
+			<section class="section section--nav" id="Beca">
+				<span class="link-copy"></span>
+				<nav class="nav nav--beca">
+					<button class="nav__item" aria-label="Item 0"><span class="nav__item-title"><span>2000</span></span></button>
+					<button class="nav__item" aria-label="Item 1"></span><span class="nav__item-title"><span>2001</span></span></button>
+					<button class="nav__item nav__item--current" aria-label="Item 2"><span class="nav__item-title"><span>2002</span></button>
+					<button class="nav__item" aria-label="Item 3"><span class="nav__item-title"><span>2003</span></span></button>
+					<button class="nav__item" aria-label="Item 4"><span class="nav__item-title"><span>2004</span></span></button>
+					<button class="nav__item" aria-label="Item 5"><span class="nav__item-title"><span>2005</span></span></button>
+					<button class="nav__item" aria-label="Item 6"><span class="nav__item-title"><span>2006</span></span></button>
+					<button class="nav__item" aria-label="Item 7"><span class="nav__item-title"><span>2007</span></span></button>
+					<button class="nav__item" aria-label="Item 8"><span class="nav__item-title"><span>2008</span></span></button>
+					<button class="nav__item" aria-label="Item 9"><span class="nav__item-title"><span>2009</span></span></button>
+					<button class="nav__item" aria-label="Item 10"><span class="nav__item-title"><span>2010</span></span></button>
+					<button class="nav__item" aria-label="Item 11"><span class="nav__item-title"><span>2011</span></span></button>
+					<button class="nav__item" aria-label="Item 12"><span class="nav__item-title"><span>2012</span></span></button>
+					<button class="nav__item" aria-label="Item 13"><span class="nav__item-title"><span>2013</span></span></button>
+					<button class="nav__item" aria-label="Item 14"><span class="nav__item-title"><span>2014</span></span></button>
+					<button class="nav__item" aria-label="Item 15"><span class="nav__item-title"><span>2015</span></span></button>
+					<button class="nav__item" aria-label="Item 16"><span class="nav__item-title"><span>2016</span></span></button>
+					<button class="nav__item" aria-label="Item 17"><span class="nav__item-title"><span>2017</span></span></button>
+					<button class="nav__item" aria-label="Item 18"><span class="nav__item-title"><span>2018</span></button>
+					<button class="nav__item" aria-label="Item 19"><span class="nav__item-title"><span>2019</span></button>
+					<button class="nav__item" aria-label="Item 20"><span class="nav__item-title"><span>2020</span></button>
+				</nav>
+				<!-- Mockup slider for decorative purpose only -->
+				<div class="mockup-slider">
+					<img src="img/9.jpg" alt="img09" />
+					<h3 class="mockup-slider__title">Beca</h3>
+				</div>
+			</section>
+			
+		</div>
+	</div>
+
+	<footer>
+		
+	</footer>
+</div>
+<script>
+;(function(window) {
+
+	'use strict';
+
+	function init() {
+		[].slice.call(document.querySelectorAll('.nav')).forEach(function(nav) {
+			var navItems = [].slice.call(nav.querySelectorAll('.nav__item')),
+				itemsTotal = navItems.length,
+				setCurrent = function(item) {
+					// return if already current
+					if( item.classList.contains('nav__item--current') ) {
+						return false;
+					}
+					// remove current
+					var currentItem = nav.querySelector('.nav__item--current');
+					currentItem.classList.remove('nav__item--current');
+					
+					// set current
+					item.classList.add('nav__item--current');
+				};
+			
+			navItems.forEach(function(item) {
+				item.addEventListener('click', function() { setCurrent(item); });
+			});
+		});
+	}
+
+	init();
+
+})(window);
+</script>
+</body>
+</html>

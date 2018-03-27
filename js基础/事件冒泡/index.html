@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    div {
+        width: 200px;
+        height: 200px;
+        background: green;
+    }
+    </style>
+    <script type="text/javascript">
+    var a = 0;
+    console.log(a);
+    function clic(event){
+    	a++;
+    	console.log(a);
+    	console.log(event.type);
+    }
+    </script>
+</head>
+
+<body onclick='clic()'>
+    <div onclick='clic(event)'>ss</div>
+</body>
+
+</html>

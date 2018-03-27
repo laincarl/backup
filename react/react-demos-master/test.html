@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            Hello React!
+        </title>
+        <script src="build/react.js">
+        </script>
+        <script src="build/react-dom.js">
+        </script>
+        <script src="build/browser.min.js">
+        </script>
+    </head>
+    <body>
+        <div id="example">
+        </div>
+        <script type="text/babel">
+             var TodoItem = React.createClass({
+             click:function(event){
+				alert('ss');
+             },
+        render: function() {
+            var props = this.props;
+            return <div onClick={this.click} className="todo-item">
+                        <span class="todo-item__name">{props.children}</span>
+                    </div>
+        }
+    });
+
+    ReactDOM.render(
+        <TodoItem>代办事项1</TodoItem>, 
+         document.getElementById('example')); 
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    .s {
+        width: 200px;
+        height: 200px;
+        background: red;
+    }
+
+    .a {
+        transform: translateX(200px);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="s"></div>
+    <button onclick="set()">添加动画</button>
+    <input type="" name="" onkeydown="cha(event)">
+    <p id="show"></p>
+    <button onclick="test()">test</button>
+    <script type="text/javascript">
+    function set() {
+        var ele = document.querySelector(".s");
+        ele.style.transition = "none";
+        ele.style.transform = "translateX(200px)";
+        //ele.offsetWidth;
+        setTimeout(function() {
+            ele.style.transition = "all 1s ease-in";
+            ele.style.transform = "translateX(0)";
+        }, 0);
+        ele.style.transition = "all 1s ease-in";
+        ele.style.transform = "translateX(0)";
+    }
+
+    function test() {
+        setTimeout("console.log('s')", 0);
+        for (var i = 0; i < 1000; i++) {
+            console.log(i)
+        }
+
+    }
+
+    function cha(e) {
+        var show = document.querySelector("#show");
+        setTimeout(function() { show.innerText = e.target.value }, 0);
+    }
+    </script>
+</body>
+
+</html>

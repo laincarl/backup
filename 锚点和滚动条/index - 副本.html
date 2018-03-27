@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh" dir="ltr">
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+        <script type="text/javascript">
+            $(document).ready(init);
+             
+            var Data = {
+                startX: 0,
+                startY: 0,
+                currentX: 0,
+                currentY: 0,
+                locked: false //是否设值完成, 用于完美控制不同浏览器事件解析差异
+            };
+             
+            function init(){               
+                addListener();
+            }
+             
+             
+             
+            function addListener(){
+                $("#Image").mouseover(doMouseOver).mousemove(doMouseMove);
+            }
+             
+            function doMouseOver(e){
+                Data.startX = e.pageX - Data.currentX;
+                Data.startY = e.pageY - Data.currentY;
+                Data.locked = true;               
+            }
+             
+            function doMouseMove(e){
+                if(Data.locked != true){return false;}
+                Data.currentX = (e.pageX - Data.startX);
+                Data.currentY = (e.pageY - Data.startY);
+                $("#Image").css({"background-position": Data.currentX + "px " + Data.currentY + "px"});
+            }
+             
+            function doMouseOut(e){
+                locked = false;
+            }
+             
+        </script>
+        <style type="text/css" rel="Stylesheet">
+            #Image
+                {width:150px;height:150px;border:solid 1px #ccc;position:absolute;left:200px;top:200px;background:url(http://www.dagong.com/attachments/2009/11/2_2009111709394911hwI9.jpg) no-repeat;background-position:20px 20px;}
+        </style>       
+    </head>
+    <body>
+         
+        <div id="Image">
+                 
+        </div>
+         
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var data = ['a', 'c', 'b'];
+    //sort会将一切转成字符串进行比较，如果是数字可能会10在5前面
+    data.sort();
+    for (k in data)
+        console.log(data[k]);
+    console.log(data instanceof Array);
+    // data.reverse();
+    // console.log("reverse后：",data);
+    var nowlen = data.push("d");
+    console.log(data, "push后的长度：", nowlen);
+    var out = data.pop();
+    console.log(data, "out:" + out);
+    var sitem = data.shift();
+    console.log(data, "shift后");
+    var unlen = data.unshift("a");
+    console.log(data, "unshift后");
+    data.length = 10;
+    console.log(data, "改变length后");
+    var num = [1, 2, 10, 5];
+    num.sort();
+    console.log("默认sort：" + num.sort());
+    console.log("传入函数的sort：" + num.sort(com));
+
+    function com(a1, a2) {
+        if (a1 > a2) {
+            return 1;
+        } else if (a1 < a2) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+    //concat原数组不变
+
+    b=num.concat(11,[12,13,[14]]);
+    num.reduce(function(pre,cur,index,array){
+    	console.log('pre:'+pre,'cur:'+cur,'index:'+index,'array:'+array);
+    	return pre+cur;
+    })
+    num.reduceRight(function(pre,cur,index,array){
+    	console.log('pre:'+pre,'cur:'+cur,'index:'+index,'array:'+array);
+    	return pre+cur;
+    })
+    console.log("concat后：",b);
+    //如果是数字可以直接
+    /*function com(a1, a2) {
+        return a1 - a2;
+    }*/
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .star-rating {
+        unicode-bidi: bidi-override;
+        color: #ddd;
+        font-size: 0;
+        height: 25px;
+        margin: 0 auto;
+        position: relative;
+        display: table;
+        padding: 0;
+        text-shadow: 0px 1px 0 #a2a2a2;
+    }
+    
+    .star-rating span {
+        padding: 5px;
+        font-size: 50px;
+    }
+    
+    .star-rating-top {
+        color: #FFD700;
+        padding: 0;
+        position: absolute;
+        z-index: 1;
+        display: block;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: width 5s linear;
+        width: 0;
+    }
+    
+    .star-rating-bottom {
+        padding: 0;
+        display: block;
+        z-index: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="star-rating">
+        <div class="star-rating-top">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+        </div>
+        <div class="star-rating-bottom">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+        </div>
+    </div>
+    <button onclick="start()">开始</button>
+    <button onclick="reset()">复原</button>
+</body>
+<script type="text/javascript">
+var ss = document.querySelector(".star-rating-top");
+
+function start() {
+    ss.setAttribute('style', 'width:100%');
+}
+function reset() {
+    ss.setAttribute('style', 'width:0');
+}
+</script>
+
+</html>

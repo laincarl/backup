@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+    <style type="text/css">
+html {
+        font-size: 10px;
+        background: #efeff4;
+    }
+    /*header*/
+    
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: -apple-system, SF UI Display, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+    }
+    
+    ul,
+    li {
+        padding: 0;
+        margin: 0;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        color: #000;
+        line-height: 60px;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    
+    .nav-container {
+        background: rgba(255, 255, 255, 0.9);
+        width: 100%;
+        height: 6rem;
+        font-size: 0;
+        /*background: rgba(255,255,255,0.5);*/
+    }
+    
+    .leftnav,
+    .rightnav {
+        font-size: 1rem;
+    }
+    
+    .leftnav {
+        float: left;
+        height: 6rem;
+        text-align: left;
+    }
+    
+    .rightnav {
+        float: right;
+        height: 6rem;
+        text-align: right;
+    }
+    
+    .clearfix:after {
+        display: block;
+        content: 'clear';
+        clear: both;
+        line-height: 0;
+        visibility: hidden;
+    }
+    
+    .left,
+    .right {
+        text-align: center;
+        display: inline-block;
+        height: 6rem;
+        width: 10rem;
+    }
+    
+    .wrapmenu {
+        display: none;
+    }
+    
+    .pull-list {
+        font-size: 2.5rem;
+        background: white;
+    }
+    
+    .left:hover,
+    #addlink:hover,
+    #menu li:hover {
+        background: #eeeeee;
+    }
+    
+    input,
+    button {
+        border: none;
+        outline: none;
+    }
+    
+    .search {
+        position: relative;
+        width: 26rem;
+        text-align: right;
+        margin: auto;
+    }
+    
+    .search input {
+        vertical-align: middle;
+        border: 2px solid #dedddd;
+        border-radius: 5px;
+        background: #fff;
+        width: 23rem;
+        height: 4.2rem;
+        font-size: 1.4rem;
+        padding-left: 1rem;
+        padding-right: 0.5rem;
+        transition: .3s linear;
+    }
+    
+    .search input:focus {
+        width: 25rem;
+        border: 2px solid #cbc9c9;
+    }
+    
+    .search button {
+        top: 0;
+        right: 0;
+        background: #eee;
+        border: 2px solid #dedddd;
+        border-radius: 0 5px 5px 0;
+        height: 4.2rem;
+        width: 5rem;
+        cursor: pointer;
+        position: absolute;
+    }
+    
+    #headlink {
+        width: 4rem;
+        height: 6rem;
+        padding: 0px;
+    }
+    
+    #headpic {
+        vertical-align: middle;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+    }
+    
+    #menulink {
+        display: relative;
+    }
+    
+    #menulink:hover ul {
+        display: block;
+    }
+    
+    #menu {
+    	background: white;
+        width: 18rem;
+        height: 200;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        display: none;
+        position: absolute;
+        top: 6rem;
+        right: 0;
+    }
+    
+    #menu li {
+        width: 18rem;
+        height: 5rem;
+        border-top: 1px solid #eee;
+    }
+    
+    #menu li a {
+        display: inline-block;
+        padding: 0px;
+        margin: 0px;
+        width: 18rem;
+        height: 5rem;
+        font-size: 1.5em;
+        line-height: 5rem;
+        text-align: left;
+    }
+    
+    #menu li a i {
+        padding: 0 1.5rem;
+        font-size: 1.2em;
+        line-height: 5rem;
+    }
+    
+    .line {
+        width: 100%;
+        height: 1px;
+        background: #eeeeee;
+    }
+    /*filter*/
+    
+    .filter-container {
+        width: 100%;
+        margin-top: 3rem;
+        padding-left: 10%;
+        padding-right: 10%;
+        overflow: hidden;
+    }
+    
+    .filter-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    
+    .filter {
+        display: inline-block;
+        width: 6rem;
+        height: 4rem;
+        line-height: 4rem;
+        margin: 0 2rem;
+    }
+    
+    .filter a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        line-height: inherit;
+    }
+    
+    .on a {
+        background: black;
+        color: white;
+    }
+    /*content*/
+    
+    .content-container {
+        margin-top: 3rem;
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+        text-align: justify;
+        font-size: 0;
+    }
+    
+    .child {
+        width: 20rem;
+        height: 20rem;
+        margin: 1rem;
+        background: green;
+        display: inline-block;
+    }
+    
+    .justify_fix {
+        display: inline-block;
+        width: 15rem;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .left {
+            display: none;
+        }
+        .wrapmenu {
+            display: inline-block;
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        html {
+            font-size: 8px;
+        }
+        .search {
+            display: none;
+        }
+        .child {
+            display: block;
+            width: 100%;
+            height: 10rem;
+            margin: 0.7rem auto;
+            background: #fff;
+            border-radius: 0.5rem;
+        }
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!--     <nav class="nav">
+        <ul>
+            <li class="current"><a href="#">首页</a></li>
+            <li><a href="#">客户服务</a></li>
+            <li><a href="#">产品展示</a></li>
+            <li><a href="#">经典案例</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+    </nav> -->
+    <header>
+        <div class="nav-container">
+            <ul class="leftnav clearfix">
+                <li class="left"><a href="#">首页</a></li>
+                <li class="left"><a href="#">首页</a></li>
+                <li class="left"><a href="#">首页</a></li>
+            </ul>
+            <ul class="rightnav clearfix">
+                <li class="right search">
+                    <input type="text" placeholder="请输入您要搜索的内容...">
+                    <button type="submit" class="iconfont icon-sousuo"></button>
+                </li>
+                <li class="right" id="menulink">
+                    <a href="" id="headlink">
+                        <img id="headpic" src="head.jpg">
+                    </a>
+                    <ul id="menu">
+                        <li>
+                            <a href=""><i class="iconfont icon-sousuo"></i>个人中心</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="iconfont icon-sousuo"></i>收藏</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="iconfont icon-sousuo"></i>设置</a>
+                        </li>
+                        <li>
+                            <a onclick="signout()"><i class="iconfont icon-sousuo"></i>登出</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="right wrapmenu">
+                    <button class="iconfont icon-liebiao pull-list"></button>
+                </li>
+            </ul>
+            <div class="line"></div>
+        </div>
+    </header>
+    <ul class="filter-container">
+        <span class="filter-title">方向：</span>
+        <li class="filter on"><a href="">全部</a></li>
+        <li class="filter"><a href="">选项一</a></li>
+        <li class="filter"><a href="">选项一</a></li>
+    </ul>
+    <ul class="filter-container">
+        <span class="filter-title">分类：</span>
+        <li class="filter on"><a href="">全部</a></li>
+        <li class="filter"><a href="">选项一</a></li>
+        <li class="filter"><a href="">选项一</a></li>
+        <li class="filter"><a href="">选项一</a></li>
+        <li class="filter"><a href="">选项一</a></li>
+    </ul>
+    <ul class="filter-container">
+        <span class="filter-title">类型：</span>
+        <li class="filter on"><a href="">全部</a></li>
+        <li class="filter"><a href="">选项一</a></li>
+        <li class="filter"><a href="">选项一</a></li>
+        <li class="filter"><a href="">选项一</a></li>
+        <li class="filter"><a href="">选项一</a></li>
+    </ul>
+    <div class="content-container">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="justify_fix">&nbsp;</div>
+        <div class="justify_fix">&nbsp;</div>
+        <div class="justify_fix">&nbsp;</div>
+        <div class="justify_fix">&nbsp;</div>
+    </div>
+</body>
+
+</html>

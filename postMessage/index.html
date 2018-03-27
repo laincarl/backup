@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <button onclick="opwin()">打开</button>
+    <script type="text/javascript">
+    function opwin() {
+        var popup = window.open("test.html", "_blank");
+        //console.log(popup);
+        //setTimeout.call(this,cl,2000);
+        var string = { a: 's' };
+        // setTimeout("cl('"+string+"')", 3000);
+    }
+
+    function cl(wi) {
+        console.log(wi.a);
+        // popup.close();
+    }
+
+    function receiveMessage(event) {
+        // console.log(event.data, event.origin, event.source);
+        if (event.origin !== "http://localhost")
+            return;
+        console.log(event.data);
+        event.source.postMessage("我是主窗口，我接收到消息了",window.location);
+        // event.source.close();
+        // event.source is popup
+        // event.data is "hi there yourself!  the secret response is: rheeeeet!"
+    }
+    window.addEventListener("message", receiveMessage, false);
+    </script>
+</body>
+
+</html>

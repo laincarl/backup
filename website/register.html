@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			font-family: -apple-system,SF UI Display,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+		}
+
+		body {
+			background: #f1f1f1;
+			height: 100%;
+			text-align: center;
+		}
+		a{
+			text-decoration: none;
+		}
+		.container {
+			width: 360px;
+			height: 355px;
+			display: inline-block;
+			background: #fff;
+			margin: 80px auto;
+			padding: 40px 20px;
+			box-shadow:0 0 10px rgba(0, 0, 0, .2);
+			border-radius: 5px;
+		}
+
+		.textbutton {
+			color: gray;
+			display: inline-block;
+			padding: 20px 20px;
+			
+			font-size: 1.3em;
+			border-bottom: 2px solid white;
+		}
+
+		.textbutton:hover {
+			border-bottom: 2px solid darkorange;
+		}
+
+		.textbuttoncontainer {
+			margin-bottom: 10px;
+			text-align: center;
+		}
+
+		#register_index {
+			font-weight: bold;
+			
+			color: darkorange;
+			border-bottom: 2px solid darkorange;
+		}
+
+		.inputcontainer {
+			border-radius: 10px;
+			height: 55px;
+			width: 310px;
+			background: #E4E4E4;
+			border: none;
+			color: #000;
+			margin: 20px auto;
+		}
+
+		.input {
+			border: none;
+			font-size: 1.0em;
+			
+			height: 55px;
+			width: 250px;
+			background: #E4E4E4;
+			padding-left: 5px;
+		}
+
+		input:focus {
+			outline: none;
+		}
+		/*去掉记住密码后的input黄色背景*/
+		input:-webkit-autofill {  
+			-webkit-box-shadow: 0 0 0px 1000px #E4E4E4 inset;  
+
+		} 
+		#username:before {
+			content: "用户名";
+			color: black;
+		}
+
+		.check {
+			width: 17px;
+			height: 17px;
+			vertical-align: middle;
+			margin-left: -50px;
+		}
+
+		.forget {
+			margin-left: 50px;
+			margin-right: -50px;
+		}
+
+		#btn_register {
+			width: 270px;
+			height: 48px;
+			background: #42c02e;
+			color: aliceblue;
+	
+			font-size: 1.2em;
+			border: none;
+			border-radius: 5px;
+			margin-top: 30px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="textbuttoncontainer">
+			<a class="textbutton" id="login_index" href="/login">登录</a>
+			<b>·</b>
+			<a class="textbutton" id="register_index" href="/register">注册</a>
+		</div>
+		<div class="inputcontainer"><img src="/img/username.svg" style="width: 25px; height:25px; vertical-align: middle;"><input class="input" type="text" id="username" placeholder="用户名或邮件地址"></div>
+		<div class="inputcontainer"><img src="/img/password.svg" style="width: 25px; height:25px; vertical-align: middle;"><input class="input" type="password" id="password" placeholder="密码"></div>
+
+		<button id="btn_register" onclick="Register()">注册</button>
+	</div>
+	<script type="text/javascript" src="/script/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="/script/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var m = 's';
+    var a = {
+        m: function() {
+            this.m = 'a';
+            console.log(this.m);
+            //b=b.bind(this)
+            //b();
+            (function() {
+                //this.m='b';
+                console.log('匿名函数：', this.m)
+            })();
+            (() => {
+                //this.m='b';
+                console.log('箭头函数：', this.m)
+            })();
+        }
+    }
+
+    a.m();
+    console.log(m);
+    </script>
+</body>
+
+</html>

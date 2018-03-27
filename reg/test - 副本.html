@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var string = "123456789";
+    var regex2 = /(?!^)(?=([0-9]{3})+$)/g;
+    console.log(string.replace(regex2, ","));
+    var regex = /(\d{4})-(\d{2})-(\d{2})/;
+    var string = "2017-06-12";
+
+    regex.test(string); // 正则操作即可，例如
+    //regex.exec(string);
+    //string.match(regex);
+
+    console.log(RegExp.$1); // "2017"
+    console.log(RegExp.$2); // "06"
+    console.log(RegExp.$3); // "12"
+    
+    var regex = /\1\2\3\4\5\6\7\8\9/;
+    console.log(regex.test("\1\2\3\4\5\6\7\8\9"));
+    console.log("\1\2\3\4\5\6\7\8\9".split(""));
+    </script>
+</body>
+
+</html>

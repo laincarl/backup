@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    .drag {
+        width: 200px;
+        height: 200px;
+        background: red;
+        cursor: move;
+        position: absolute;
+        left: 100px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="drag">
+        <input type="" name="">
+        <input type="" name="">
+        <input type="" name="">
+    </div>
+    <script type="text/javascript">
+    var ele = document.querySelector(".drag");
+    // ele.ondragstart = function() {
+    //     setTimeout(function() { ele.style.display = "none" }, 0);
+    // }
+    ele.onmousedown = function(event) {
+        var x = event.clientX;
+        var y = event.clientY;
+        var m = ele.offsetLeft;
+        var n = ele.offsetTop;
+        //console.log(x, y);
+        document.onmousemove = function(event) {
+            //console.log(x, y);
+
+            //console.log(ele.offsetLeft, ele.offsetTop,ele.style.transform);
+            var a = event.clientX,
+                b = event.clientY;
+            // ele.style.transform = `translate3d(${m + a - x + "px"},${n + b - y + "px"},0)`;
+            ele.style.left = m + a - x + "px";
+            ele.style.top = n + b - y + "px";
+
+        }
+    }
+    document.onmouseup = function() {
+        if (document.onmousemove) {
+            var left = ele.style.transform;
+            var reg = /[0-9]+(?=p)/g;
+            var res = left.match(reg);
+            console.log(res);
+            ele.style.transform = "";
+            ele.style.left = parseInt(ele.style.left)||0 + parseInt(res[0]) + "px";
+            ele.style.top = parseInt(ele.style.top)||0 + parseInt(res[1]) + "px";
+            console.log(ele.style.left,ele.style.transform)
+        }
+        document.onmousemove = null;
+        // console.log(document.onmousemove)
+
+    } //鼠标弹起
+    </script>
+</body>
+
+</html>

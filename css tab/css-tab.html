@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0 user-scalable=0">
+    <title>CSS TAB</title>
+   
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html{
+        background: #eee;
+    }
+    .tab-container {
+        position: relative;
+        width: 300px;
+        height: 500px;
+        margin: 50px auto;
+        font-size: 12px;
+        color: #484848;
+        border: 1px solid #ddd;
+    }
+    
+    h3 {
+        width: 100%;
+        height: 40px;
+        background: #f4f5f6;
+        font: normal 14px/40px "Simhei";
+        color: #888;
+    }
+    
+    .tab-container input {
+        /*-moz-appearance: none;
+        -webkit-appearance: none;*/
+        display: none;        
+    }
+    
+    .tab-container li {
+        list-style: none;
+        float: left;
+    }
+    
+    .tab-container label {
+        display: block;
+        width: 149px;
+        height: 40px;
+        font-size: 18px;
+        line-height: 40px;
+        text-align: center;        
+        background: #ededf0;
+        cursor: pointer;
+
+    }   
+
+    .tab-container ul li:nth-of-type(2),
+    .tab-container ul li:nth-of-type(3),
+    {
+        
+    }
+    
+    [class*="allbuy"] {
+        display: none;
+    }
+    
+    [class*="allbuy"] table {
+        width: 100%;
+        text-align: center;
+        line-height: 30px;
+    }
+    
+    [class*="allbuy"] table td {
+        border: 1px solid #cacbcb;
+    }
+    
+    [id^="pro"]:checked~[class^="allbuy"] {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;              
+        padding: 28px 40px 30px;
+        background: white;
+        left: 0;
+        top: 40px;
+    }
+    
+    [id^="pro"]:checked~label {
+        position: relative;
+        z-index: 1;
+        border-top: 1px solid #cacbcb;
+        background: #fff;        
+    }
+    </style>
+</head>
+
+<body>
+            
+        <div class="tab-container">
+            <ul>
+                <li>
+                    <input type="radio" name="tab" id="pro-1" checked>
+                    <label for="pro-1">按职类</label>
+                    <div class="allbuy-1">
+                        1
+                    </div>
+                </li>
+                <li>
+                    <input type="radio" name="tab" id="pro-2">
+                    <label for="pro-2">按行业</label>
+                    <div class="allbuy-2">
+                        2
+                    </div>
+                </li>
+            </ul>
+        </div>
+    
+</body>
+
+</html>

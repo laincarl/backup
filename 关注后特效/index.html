@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #father {
+        position: relative;
+        margin: 15rem;
+        background: blue;
+        width: 200px;
+        height: 50px;
+    }
+    
+    #child {
+        position: absolute;
+        /*background: red;*/
+        /*display: none;*/
+        width: 200px;
+        height: 50px;
+        text-align: center;
+        visibility: hidden;
+    }  
+  
+    @keyframes star {
+        from {
+            top: 0;
+            visibility: visible;
+            opacity:1;
+        }
+        to {
+            top: -200px;
+            visibility: hidden;
+            opacity:0;
+        }
+    }
+    .ani {
+        /*display: block;*/
+        /*top: -500px;*/
+        /*transition: all 1s ease-in;*/
+                 
+        animation: star 0.8s cubic-bezier(0.21, 0.98, 1, 1);
+    }
+    
+    </style>
+    
+</head>
+
+<body>
+<button id="btn" onclick="show()">ss</button>
+    <div id="father">
+        <div id="child">关注成功</div>
+    </div>
+    
+</body>
+<script type="text/javascript">
+    var bt = document.querySelector('#btn');
+    console.log(bt);
+    btn.click();
+    function show() {
+        var fa = document.querySelector('#father');
+        var ch = document.querySelector('#child');
+        //ch.className?ch.className='ani':ch.className=null;
+        ch.className===''?ch.className='ani':ch.className='';
+    }
+    </script>
+</html>

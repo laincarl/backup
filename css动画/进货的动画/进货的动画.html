@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>仓库进货的动画</title>
+    <style type="text/css">
+    .left {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background: red;
+        display: inline-block;
+    }
+    .ani {          
+        width: 280px;
+        height: 280px;        
+    }
+    .anima {
+        animation: move 1s infinite linear;
+    }
+    .hidden {
+        display: none;
+    }
+    @keyframes move{
+        from {
+            transform:translateX(0);
+        }
+        to {
+            transform:translateX(700px);
+        }
+    }
+    .right {
+        margin-left: 500px;        
+        width: 350px;
+        height: 350px;
+    }
+    #con{
+        margin:40px auto;
+        text-align: center;
+    }
+    #top{
+        background: #6B6BFA;
+        width:100%;
+        height:130px;
+    }
+    #button{
+        background: #6B6BFA;
+        margin-top: 5%;
+        width:100%;
+        height:130px;
+    }
+    </style>
+    <script type="text/javascript">
+    function start(){
+        var con = document.getElementById("con");
+        var ani = document.getElementById("ani");
+		ani.className="ani anima";
+		setTimeout("jump()",5000);
+    }
+    function jump(){
+        //这里动画播放完毕进行页面的跳转
+        window.open("file:///C:/Users/DH/Desktop/%E8%BF%9B%E8%B4%A7%E7%9A%84%E5%8A%A8%E7%94%BB.html","_self");
+    }   
+    </script>
+</head>
+<body onload="start()">
+    <div id="top"></div>
+    <div id="con">
+        <img id="ani" class="ani" src="货物.png" alt="货物的图标"/>
+        <img class="right" src="仓库.png" alt="仓库的图标"/>
+    </div>
+    <div id="button"></div>
+</body>
+</html>

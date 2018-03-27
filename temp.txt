@@ -1,0 +1,195 @@
+passwd
+
+sudo passwd
+
+/home/ubuntu/dev/jdk1.8.0_121
+
+export JAVA_HOME="/home/ubuntu/dev/jdk1.8.0_121"  
+export PATH="$JAVA_HOME/bin:$PATH"  
+export CLASSPATH=".:$JAVA_HOME/lib:$CLASSPATH"
+netstat -an|grep 3306
+update user set host = '%' where user = 'root';
+bind-add...注释掉或改成0.0.0.0
+/etc/mysql/mysql.conf.d/mysqld.cnf
+
+为了安全考虑，OneinStack仅允许云主机本机（localhost）连接数据库，如果需要远程连接数据库，需要如下操作：
+打开iptables 3306端口（CentOS）
+
+# iptables -I INPUT 4 -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT
+# service iptables save #保存iptables规则
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'smartisan' WITH GRANT OPTION; 
+flush privileges;
+
+apache ： service httpd start
+mysql : service mysqld start
+php 自动加载。
+cd /home/ubuntu/dev/apache-tomcat-9.0.0.M17/bin
+
+一.问题描述和相关概念
+
+    linux服务器的字符集设置可能影响到网站页面出现 “？？？” 等问号乱码，还有可能导致文件中的汉字部分出现乱码。
+
+    locales设置：语言设置选项
+   linux真的是一个非常强大的系统，windows如果要更改语言系统，必须要重新安装软件， 这就是windows存在多国语言版 的原因。而linux非常方便，我们可以通过locales设置，将linux从英文版更改为中文版，下面我们来看看如何更改语言设置。
+
+二.原因
+
+简单的说是因为服务器没有安装zh_CN.UTF-8 字符集，导致不支持中文！
+
+locale   //执行这个命令，查看和语言编码有关的环境变量
+
+显示如下：
+
+LANG=
+
+LANGUAGE=en_US:en
+
+LC_CTYPE="POSIX"
+
+LC_NUMERIC="POSIX"
+
+LC_TIME="POSIX"
+
+LC_COLLATE="POSIX"
+
+LC_MONETARY="POSIX"
+
+LC_MESSAGES="POSIX"
+
+LC_PAPER="POSIX"
+
+LC_NAME="POSIX"
+
+LC_ADDRESS="POSIX"
+
+LC_TELEPHONE="POSIX"
+
+LC_MEASUREMENT="POSIX"
+
+LC_IDENTIFICATION="POSIX"
+
+LC_ALL=
+
+
+
+可以看到大多数都默认为POSIX 类型的，这时可以改服务器的默认字符集为zh_CN.UTF-8（我测试过改了没问题哦，可以解决汉字乱码问题。如果能通过设置SecureCrt等终端可以解决的话，就没必要改了）
+
+三.解决办法
+
+环境：Ubuntu 12.04.5 LTS \n \l
+
+1.安装基本的软件包（第2步安装 zh_CN 中文字符集时要用到）
+
+sudo apt-get update     //ubuntu系统更新软件包列表
+
+sudo apt-get install  -y language-pack-zh-hans
+
+sudo apt-get install -y language-pack-zh-hant
+
+2.
+
+cd /usr/share/locales    
+
+sudo ./install-language-pack zh_CN   //开始安装zh_CN中文字符集
+
+3.  编辑 sudo vim /etc/environment     //环境变量配置文件
+
+ 添加下面zh_CN.UTF-8有关的环境变量，添加完就变成默认的了哦：
+
+
+
+LANG=zh_CN.UTF-8
+
+LANGUAGE=en_US:en
+
+LC_CTYPE="zh_CN.UTF-8"
+
+LC_NUMERIC="zh_CN.UTF-8"
+
+LC_TIME="zh_CN.UTF-8"
+
+LC_COLLATE="zh_CN.UTF-8"
+
+LC_MONETARY="zh_CN.UTF-8"
+
+LC_MESSAGES="zh_CN.UTF-8"
+
+LC_PAPER="zh_CN.UTF-8"
+
+LC_NAME="zh_CN.UTF-8"
+
+LC_ADDRESS="zh_CN.UTF-8"
+
+LC_TELEPHONE="zh_CN.UTF-8"
+
+LC_MEASUREMENT="zh_CN.UTF-8"
+
+LC_IDENTIFICATION="zh_CN.UTF-8"
+
+LC_ALL=zh_CN.UTF-8
+
+
+
+4.重新登录一次shell  
+
+source /etc/environment   //使刚才添加的环境变量生效。如果不重新登录shell的话，执行此命令可能会报错哦，我试过了！
+
+
+
+四.简单看下成果
+
+1.locale 命令看下输出结果吧！
+
+2.也可以进入  /var/lib/locales/supported.d
+
+cat local
+
+显示：
+
+en_US.UTF-8 UTF-8
+
+zh_CN.UTF-8 UTF-8
+
+而没有安装中文之前只显示：
+
+en_US.UTF-8 UTF-8
+
+注：locale -a 可以查看操作系统支持的字符集。
+
+vim使用：
+1.按i进入编辑模式
+2.编辑完成后先按esc再输入:wq保存退出
+
+mysql：
+1.mysql -u root -p以root用户登录
+2.service mysql restart重启mysql服务
+3.mysql配置文件在两个位置，这两个位置在/etc/mysql/mysql.cnf中规定
+一般是/etc/mysql/config.d/mysql.cnf在里面的[mysqld]节点下，在skip-external-locking下面一行写入character-set-server=utf8
+/etc/mysql/mysql.config.d/mysqld.cnf
+在[mysql]节点下写入default-character-set=utf8
+
+
+
+
+
+
+
+
+
+chown ubuntu:www /usr/local/apache -R
+chown ubuntu:www /data/wwwroot/ -R
+chown ubuntu /data/wwwroot/ -R
+
+chown ubuntu /usr/local/nginx/conf/ -R
+
+find / -name vhost
+
+find / -name nginx
+
+php-cgi.exe -b 127.0.0.1:9000 -c E:/wnmp/php7/php.ini
+
+apache的配置文件是httpd.conf
+用locate httpd.conf就可以找到所在的目录了
+你的nginx是否启动了？ 如果启动了，用ps -ef|grep nginx可以查看到nginx运行目录 如果没有启动，用find / -name nginx查看
+npm install --save-dev jquery

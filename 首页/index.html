@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <style type="text/css">
+    html {
+        background-image: url("http://cn.bing.com/az/hprichbg/rb/TOAD_ZH-CN7336795473_1920x1080.jpg");
+        background-position: fixed;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        box-shadow: inset 0 0 150px rgba(0, 0, 0, .2);
+    }
+    
+    * {
+        font-family: "Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        font-weight: 500;
+    }
+    
+    .search-container {
+        width: 600px;
+        margin: 10% auto;
+    }
+    
+    input,
+    button {
+        padding: 0;
+        border: none;
+        outline: none;
+    }
+    
+    .search-input {
+        width: 480px;
+        height: 50px;
+        font-size: 20px;
+        padding-left: 13px;
+    }
+    
+    .search-button {
+        width: 100px;
+        height: 50px;
+        background: #007daa;
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+    }
+    
+    .mark-container {
+        background: rgba(255, 255, 255, .86);
+        width: 80%;
+        max-height: 100%;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        border-radius: 5px;
+    }
+    
+    .mark {
+        margin: 18px 23px;
+        width: 12%;
+        display: inline-block;
+        font-size: 0;
+    }
+    
+    .mark a {
+        background: url("https://www.baidu.com/favicon.ico") no-repeat;
+        background-size: 20px 20px;
+        padding-left: 25px;
+        display: inline-block;
+        height: 20px;
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+        line-height: 20px;
+    }
+    
+    .add {
+        border: 1px solid #bfbfbf;
+    }
+    
+    .add a {
+        background: url("add.png") no-repeat;
+        background-size: 20px 20px;
+        padding-left: 25px;
+        cursor: pointer;
+        color: gray;
+    }
+    
+    .list {
+        position: absolute;
+        cursor: pointer;
+        top: 10px;
+        right: 50px;
+        width: 25px;
+        height: 25px;
+    }
+    
+    .close {
+        position: absolute;
+        cursor: pointer;
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+    }
+    
+    .dialogue-mask {
+        position: absolute;
+        /*弹出层*/
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(128, 128, 128, 0.5);
+        display: none;
+    }
+    
+    .dialogue-container {
+        width: 80%;
+        margin: auto;
+        height: 500px;
+        box-sizing: border-box;
+        /*-webkit-transform: translate(-50%, -50%);*/
+        background-color: white;
+        box-shadow: 1px 1px 1px 1px #cdcfda;
+        border-radius: 10px;
+        padding: 15px;
+        display: block;
+        z-index: 2;
+        position: relative;
+    }
+    
+    .dialogue-title {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 30px;
+    }
+    
+    .dialogue-content {
+        font-size: 14px;
+        line-height: 25px;
+    }
+    
+    .dialogue-content input {
+        border: 1px solid #ddd;
+    }
+    
+    #webname {}
+    
+    #weburl {}
+    
+    .dialogue-btn {
+        margin-top: 10px;
+    }
+    
+    .clear-float::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    .dialogue-cancel {
+        float: right;
+        margin-right: 20px;
+        padding: 8px 25px;
+        color: grey;
+        background-color: white;
+        border-radius: 3px;
+        border: 1px solid #e2e1e1;
+    }
+    
+    .dialogue-sure {
+        float: right;
+        padding: 8px 25px;
+        color: white;
+        background-color: #229ffd;
+        border-radius: 3px;
+    }
+    
+    @keyframes dialogue-in {
+        from {
+            margin-top: -500px;
+        }
+        to {
+            margin-top: 50px;
+        }
+    }
+    
+    .animation-dialogue-in {
+        display: block;
+        animation: dialogue-in 0.8s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+    /*隐藏滚动条*/
+    
+    .forbid-scroll {
+        height: 100%;
+        overflow: hidden;
+    }
+    </style>
+    <script type="text/javascript">
+    function search() {
+        var word = document.getElementById("search-value").value;
+        // if (word.trim() == "") {
+        //     return;
+        // }
+        var url = "https://www.baidu.com/s?word=" + word;
+        window.open(url);
+    }
+
+    function show() {
+        // alert(document.querySelector(".dialogue-mask"));
+        document.querySelector(".dialogue-mask").setAttribute("style", "display:block");
+        var ele = document.querySelector(".dialogue-container");
+        ele.className += ' animation-dialogue-in';
+        var ele2 = document.querySelector("body,html");
+        ele2.className += ' forbid-scroll';
+    }
+
+    function hide() {
+        document.querySelector(".dialogue-mask").setAttribute("style", "display:none");
+        var ele = document.querySelector(".dialogue-container");
+        ele.className = 'dialogue-container';
+        var ele2 = document.querySelector("body,html");
+        ele2.className = '';
+    }
+
+    function sure() {
+        console.log("You have clicked the sure button");
+    }
+
+    function add() {
+        var webname = document.getElementById("webname").value;
+        var weburl = document.getElementById("weburl").value;
+        alert(webname, weburl);
+        var fso = new ActiveXObject("Scripting.FileSystemObject");
+
+        var f1 = fso.createtextfile("c:\\myjstest.txt", true);
+    }
+    </script>
+</head>
+
+<body>
+    <img class="list" src="list.png">
+    <div class="search-container">
+        <input id="search-value" class="search-input" type="input">
+        <button class="search-button" onclick="search()">搜索</button>
+    </div>
+    <div class="dialogue-mask">
+        <div class="dialogue-container">
+            <img class="close" src="close.png" onclick="hide()">
+            <div class="dialogue-title">
+                添加网址
+            </div>
+            <div class="dialogue-content">
+                <input type="input" placeholder="网站名称" id="webname">
+                <input type="input" placeholder="网站地址" id="weburl">
+                <button onclick="add()">添加</button>
+            </div>
+        </div>
+    </div>
+    <div class="mark-container">
+        <div class="mark">
+            <a href="">在线翻译</a>
+        </div>
+        <div class="mark">
+            <a href="">百度一下</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark">
+            <a href="">百度</a>
+        </div>
+        <div class="mark add" onclick="show()">
+            <a>添加网址</a>
+        </div>
+    </div>
+</body>
+
+</html>

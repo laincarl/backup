@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .right{
+    	position: fixed;
+		top: 50px;
+		right: 50px;
+    }
+    .left {
+        width: 200px;
+        height: 500px;
+        font-size: 50px;
+        text-align: center;
+    }
+    </style>
+    <script type="text/javascript">
+    	function ss() {
+    		var ss=document.body.scrollTop;
+    		var aa=document.getElementById("1").offsetTop;
+    	console.log(aa);
+    	}
+    </script>
+</head>
+
+<body onscroll="ss()">
+    <ul class="right">
+        <li><a href="#1">1</a></li>
+        <li><a href="#2">2</a></li>
+        <li><a href="#3">3</a></li>
+        <li><a href="#4">4</a></li>
+        <li><a href="#5">5</a></li>
+    </ul>
+    <div id="1" class="left">1</div>
+    <div id="2" class="left">2</div>
+    <div id="3" class="left">3</div>
+    <div id="4" class="left">4</div>
+    <div id="5" class="left">5</div>
+</body>
+
+</html>

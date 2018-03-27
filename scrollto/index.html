@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .par {
+        width: 50px;
+        height: 2000px;
+        background: #eee;
+    }
+    </style>
+</head>
+
+<body>
+    <button onclick="sc()">SCROLL</button>
+    <div class="par"></div>
+    <script>
+    function sc() {
+        // var ss=setInterval("window.scrollTo(0,500)",200);
+        // clearInterval(ss);
+        cc(1000)
+    }
+
+    function cc(value) {
+        // var i = value;       
+        var st = document.body.scrollTop;
+        var i = st;
+        //console.log(st);
+        var ss = setInterval(function() {
+                window.scrollTo(0, i);
+                i = i +10;
+                if (i >= value) {
+                    clearInterval(ss);
+                }
+
+
+            },
+            1.6);
+
+
+
+        // for (var i = 0; i < value; i++) {
+        //     setTimeout("window.scrollBy(0, -i);", 500);
+        // }
+    }
+    </script>
+</body>
+
+</html>

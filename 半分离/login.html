@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+        <title>Mismatch - Log In</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script type="text/javascript">
+        function sub(){
+        	document.getElementById('myform').submit();
+        }
+        	      
+
+function Login() {
+
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	if (typeof (username) == "undefined" || username.trim() == "") {
+		alert("请填写完整");
+		return;
+	}
+	if (typeof (password) == "undefined" || password.trim() == "") {
+		alert("请填写完整");
+		return;
+	}
+            
+            xmlHttp = GetXmlHttpObject()
+            if (xmlHttp == null) {
+            	alert("Browser does not support HTTP Request")
+            	return;
+            }
+
+            var url = "logIn.php"
+            var sendstr = "username=" + username + "&password=" + password;
+    //url=url+"?q="+str
+    //url=url+"&sid="+Math.random()
+
+    xmlHttp.onreadystatechange = stateChanged
+    xmlHttp.open("POST", url, true)
+    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xmlHttp.send(sendstr);
+    //alert("do");
+}
+
+
+function stateChanged() {
+	if (xmlHttp.readyState == 4 || xmlHttp.readyState == "complete") {
+		if((xmlHttp.status >= 200 && xmlHttp.status < 300) || xmlHttp.status == 304){
+			alert(xmlHttp.responseText);
+		}
+		else{
+			alert("请求失败");
+		}
+		//if(xmlHttp.responseText=="登录成功"){
+			
+		//}
+		
+	}
+}
+
+function GetXmlHttpObject() {
+	var xmlHttp = null;
+	try {
+        // Firefox, Opera 8.0+, Safari
+        xmlHttp = new XMLHttpRequest();
+    } catch (e) {
+        //Internet Explorer
+        try {
+        	xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+        	xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    }
+    return xmlHttp;
+}
+
+        </script>
+    </head>
+    <body onload="sub()">
+        <h3>Msimatch - Log In</h3>
+        <!--通过$_SESSION['user_id']进行判断，如果用户未登录，则显示登录表单，让用户输入用户名和密码-->
+                
+        <form method = "post" action="logIn.php" id="myform">
+            <fieldset>
+                <legend>Log In</legend>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"
+                value="" />
+                <br/>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"/>
+            </fieldset>
+            <input type="submit" value="Log In" name="sub"/>
+        </form>
+      
+    </body>
+</html>

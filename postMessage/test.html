@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="send()">发送</button>
+    <script type="text/javascript">
+    function send() {
+        // console.log(window.opener, window.location);
+        window.opener.postMessage("我是子窗口，向主窗口发送消息", window.location);
+    }
+
+    function receiveMessage(event) {
+        // console.log(event.data, event.origin, event.source);
+        if (event.origin !== "http://localhost")
+            return;
+        console.log(event.data);
+        // event.source.close();
+        // event.source is popup
+        // event.data is "hi there yourself!  the secret response is: rheeeeet!"
+    }
+    window.addEventListener("message", receiveMessage, false);
+    </script>
+</body>
+
+</html>

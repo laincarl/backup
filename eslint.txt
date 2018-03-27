@@ -1,0 +1,1 @@
+eslint eslint-loader babel-eslint eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-import eslint-plugin-react

@@ -1,0 +1,3 @@
+this.props.location.search
+Лђеп
+window.location.search

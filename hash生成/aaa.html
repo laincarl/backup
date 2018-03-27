@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var reverseBits = function(n) {
+        var str = (n >>> 0).toString(2);
+        //console.log((n >>> 0).toString(2));
+        var reverse = (Array(32 - str.length).fill(0).concat(str.split(''))).reverse().join('');
+        return parseInt(reverse, 2);
+
+    };
+    console.log(reverseBits(43261596));
+    //console.log(reverseBits(-1));
+    </script>
+</body>
+
+</html>

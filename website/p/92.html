@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head id="head" articalid="15">
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/template.css">
+    <link rel="stylesheet" type="text/css" href="/wangEditor-2.1.23/dist/css/wangEditor.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-container" id="navigation">
+            <ul id="navbar">
+                <li class="left"><a href="/index.html">首页</a></li>
+                <li class="left"><a href="#">首页</a></li>
+                <li class="left"><a href="#">首页</a></li>
+                <li class="right" id="addlink"><a href="/login" id="newartical">写文章</a></li>
+                <li class="right" id="menulink">
+                    <a href="add" id="headlink">
+                        <img id="headpic" src="/img/headicon.jpg">
+                    </a>
+                    <ul id="menu">
+                        <li>
+                            <a href=""><img src="/img/user.svg">我的主页</a>
+                        </li>
+                        <li>
+                            <a href=""><img src="/img/collect.svg">收藏的文章</a>
+                        </li>
+                        <li>
+                            <a href=""><img src="/img/setting.svg">设置</a>
+                        </li>
+                        <li>
+                            <a href=""><img src="/img/sign-out.svg">登出</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="search right">
+                    <input type="text" class="search-input">
+                    <img class="searchicon" src="/img/search.svg">
+                </li>
+            </ul>
+            <div class="line"></div>
+        </div>
+
+    </header>
+    <section>
+        <div class="sidebar"><div><img src="/img/top.svg"></div><div><img src="/img/collect2.svg"></div><div><img src="/img/reply2.svg"></div></div>
+        <div id="artical-container">
+            <div class="artical">
+                <h1 id="title">踩踩踩</h1>
+                <div class="authorbar" style="width: 300px;height: 45px;">
+                    <a href="" class="head-a"><img src="/img/root.jpg"></a>
+                    <div style="display: inline-block;">
+                        <span>这里是作者</span><br>
+                        <span style="width: 300px;height: 60px;font-size: 0.9em;color: #868686">文章：6 粉丝：6 字数：66 赞扬：10
+                        </span>
+                    </div>
+
+                </div>
+                <div id="contents">
+                    <p>踩踩踩</p></div>
+                <div class="newcomment-container">
+                    <a href="" class="head-a"><img src="/img/root.jpg"></a>
+                    <textarea class="comment-input" placeholder="写下你的评论..."></textarea>
+                    <button id="btn_sentcomment" currentfloor="0" type="1" onclick="newcomment(this)">发送</button>
+                </div>
+                <h2>199条评论</h2>
+                <div id="comments">
+                    
+                 
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<footer>
+
+
+</footer>
+<script type="text/javascript" src="/script/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="/script/main.js"></script>
+<script type="text/javascript">
+    window.onload=templateload();
+</script>
+</body>
+
+</html>

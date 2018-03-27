@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">ss</button>
+    <script type="text/javascript">
+    var btn = document.querySelector("#btn");
+    // btn.onclick = function(e) {
+    //     console.log("btn");
+    //     document.onkeypress = function(e) {
+    //         console.log("document");
+    //     }
+
+    //     console.log(document);
+    //     // console.log(document.documentElement);
+    //     // console.log(e);
+    //     // e.stopPropagation();
+    //     // e.cancelBubble=true;
+    // }
+    document.attachEvent("onclick", function(e) {
+        console.log("document");
+        console.log(document);
+
+    });
+    console.log(document);
+
+    // function btn() {
+    //     console.log("btn");
+
+    // }
+    // document.onclick = function(e) {
+    //     console.log("document");
+    // }
+    // console.log(document);
+    // console.log(document.documentElement);
+    // document.documentElement.onclick = function(e) {
+    //     console.log("documentElement");
+    //     // console.log(this);
+
+    // }
+    // document.body.onclick = function() {
+    //     console.log("body");
+    // }
+    </script>
+</body>
+
+</html>

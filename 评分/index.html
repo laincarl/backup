@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .rating {
+        font-size: 0;
+        display: table;
+    }
+    
+    .rating > label {
+        color: #ddd;
+        float: right;
+    }
+    
+    .rating > label:before {
+        padding: 5px;
+        font-size: 50px;
+        line-height: 1em;
+        display: inline-block;
+        content: "★";
+    }
+    
+    .rating > input:checked ~ label,
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+        color: #FFD700;
+    }
+    
+    .rating > input:checked ~ label:hover,
+    .rating > label:hover ~ input:checked ~ label,
+    .rating > input:checked ~ label:hover ~ label {
+        opacity: 0.5;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5" hidden onchange="change(this)" />
+        <label for="star5"></label>
+        <input type="radio" id="star4" name="rating" value="4" hidden onchange="change(this)" />
+        <label for="star4"></label>
+        <input type="radio" id="star3" name="rating" value="3" hidden onchange="change(this)" />
+        <label for="star3"></label>
+        <input type="radio" id="star2" name="rating" value="2" hidden onchange="change(this)" />
+        <label for="star2"></label>
+        <input type="radio" id="star1" name="rating" value="1" hidden onchange="change(this)" />
+        <label for="star1"></label>
+    </div>
+    
+</body>
+<script type="text/javascript">
+function change(obj) {
+    var ss = document.querySelectorAll("[name=rating]");
+    console.log(ss);
+    ss.forEach((s, i) => (console.log(s.checked, i)));
+
+}
+</script>
+
+</html>

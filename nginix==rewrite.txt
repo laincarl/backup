@@ -1,0 +1,5 @@
+     if (!-e $request_filename){
+        	rewrite ^/(.*)$ /$1.html last;
+            break;
+       	 	
+    }

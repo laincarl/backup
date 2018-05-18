@@ -1,0 +1,7 @@
+flask-admin
+flask-login
+flask-sqlalchemy
+flask-babelex
+pip install mysql-python
+
+antd history moment rc-queue-anim rc-tween-one react-router-dom jquery

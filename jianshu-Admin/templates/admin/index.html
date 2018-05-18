@@ -1,0 +1,52 @@
+{% extends 'admin/master.html' %}
+{% block title %}后台管理系统{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .rowmain {
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .center-block {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .btn {
+          .center-block();
+        }
+    </style>
+{% endblock %}
+{% block body %}
+{{ super() }}
+<div class="row-fluid">
+    <div>
+        <h1 class="text-center" style="margin-top: 50px">后台管理系统</h1>
+        {% if current_user.is_authenticated %}
+        <h3 class="text-center" style="margin-top: 30px">登陆成功！</h3>
+        {% else %}
+        <form method="POST" action="">
+            {{ form.hidden_tag() if form.hidden_tag }}
+            <div class="rowmain" style="width: 200px;margin-top: 30px">
+            {% for f in form if f.type != 'CSRFTokenField' %}
+            {{ f.label }}
+            {{ f }}
+            {% if f.errors %}
+            <ul>
+                {% for e in f.errors %}
+                <li>{{ e }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endfor %}
+            <div class="center-block" style="width: 60px;">
+            <button class="btn" type="submit" style="width: 60px;margin-top: 20px">登陆</button>
+            </div>
+            </div>
+        </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock body %}

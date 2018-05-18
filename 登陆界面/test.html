@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /*login页面*/
+        
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 600px;
+            height: 320px;
+            display: block;
+            background: #fff;
+            margin: 50px auto 0;
+            padding: 40px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            border-radius: 5px;
+            text-align: center;
+            transition: height 0.3s ease-out;
+        }
+        
+        .login-logo {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .login-title {
+            font-size: 22px;
+            /* letter-spacing: 10px; */
+            margin-top: 10px;
+        }
+        
+        .hr {
+            height: 1px;
+            background: #ddd;
+            width: 60%;
+            margin: 10px auto;
+        }
+        
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin: 20px 160px 20px 90px;
+        }
+        
+        .input-label {
+            width: 50px;
+            height: 38px;
+            line-height: 38px;
+            display: inline-block;
+            overflow: hidden;
+            width: 70px;
+        }
+        
+        .input-username,
+        .input-password {
+            font-size: 16px;
+            height: 32px;
+            flex: 1;
+            padding-left: 5px;
+            border-radius: 4px;
+            border: 1px solid #DDDDDD;
+            transition: border 0.5s ease-out;
+        }
+        
+        .hint:after {
+            content: attr(data-content);
+            text-align: left;
+            margin: -10px auto;
+            width: 305px;
+            display: block;
+            font-size: 12px;
+            color: red;
+        }
+        
+        .input-username:hover,
+        .input-password:hover {
+            border: 1px solid #AAAAAA;
+        }
+        
+        .input-username:focus,
+        .input-password:focus {
+            border: 1px solid #3194d0;
+        }
+        /*去掉记住密码后的input黄色背景*/
+        
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px #E4E4E4 inset;
+        }
+        
+        #btn-login,
+        #btn-register {
+            letter-spacing: 10px;
+            flex: 1;
+            height: 35px;
+            color: white;
+            font-size: 18px;
+            line-height: 35px;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        #btn-login {
+            background: #1890ff;
+        }
+        
+        #btn-register {
+            background: #42c02e;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="login-container">
+        <img class="login-logo" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524836416605&di=948a414f4afd8e066435e1863e28c7a3&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1840735548%2C501641610%26fm%3D214%26gp%3D0.jpg">
+        <div class="login-title">轨道客流预测平台</div>
+        <div class="hr"></div>
+        <div class="input-container">
+
+            <div class="input-label">用户名</div>
+            <input class="input-username" type="text" placeholder="输入用户名"></input>
+        </div>
+        <div class="input-container">
+            <div class="input-label">密码</div>
+            <input class="input-password" type="password" placeholder="请输入您的密码"></input>
+        </div>
+        <div class="input-container">
+            <div class="input-label"></div>
+            <div id="btn-login">登录</div>
+        </div>
+    </div>
+</body>
+
+</html>

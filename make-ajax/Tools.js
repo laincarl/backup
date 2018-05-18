@@ -1,72 +1,20 @@
 //创建XHR
-function $ajax(ajaxObj) {
+function ajax(ajaxObj) {
     var xmlHttp = null;
     try {
         // Firefox, Opera 8.0+, Safari
         xmlHttp = new XMLHttpRequest();
-    } catch ( e ) {
+    } catch (e) {
         //Internet Explorer
         try {
             xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
-        } catch ( e ) {
+        } catch (e) {
             xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
     }
-    var url = '';
-    var type = 'GET'; //GET
-    var data = null;
-    if (ajaxObj.data) {
-        data = ajaxObj.data
-    }
-    xmlHttp.onreadystatechange = ajaxObj.success;
-    xmlHttp.open(type, url, true);
-    //xmlHttp.send();
-    xmlHttp.open("POST", url, true)
-    xmlHttp.setRequestHeader("Content-type", "application/json");
-    var sendstr = JSON.stringify(data);
-    xmlHttp.send(sendstr);
-//var success=()=>
-//return xmlHttp;
+    return xmlHttp;
 }
-if (xmlHttpauto.readyState == 4 || xmlHttpauto.readyState == "complete") {
-    if ((xmlHttpauto.status >= 200 && xmlHttpauto.status < 300) || xmlHttpauto.status == 304) {
-        var json = JSON.parse(xmlHttpauto.responseText);
-        //alert(json.username); 
-        if (typeof (json.id) != "undefined" & json.id.trim() != "") {
-            window.location.href = '/index.html';
-        }
-
-    } else {
-        //alert("请求失败");
-    }
-    //if(xmlHttp.responseText=="登录成功"){
-
-    //}
-
-}
-// var ss = {
-//     a: 'a',
-//     b: 'b'
-// }
-// console.log();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//读取cookies 
+//获取cookie
 function GetCookie(name) {
     var arr,
         reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
@@ -80,6 +28,90 @@ function DelCookie(name) {
     var cval = getCookie(name);
     document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
 }
+
+//验证权限
+function verification() {
+    var http = ajax();
+    //请求发送后的回调
+    http.onreadystatechange = onVerification;
+    //假如这个是后端验证接口
+    var url = 'http://localhost:8080/verification';
+    //获取cookie,cookie可以由后端直接设置
+    var token = GetCookie("Token");
+    http.open("GET", url, true);
+
+    http.setRequestHeader("Content-type", "application/json");
+    //将token加在header里面
+    http.setRequestHeader("Authorization", 'bearer ' + token);
+    http.send();
+}
+//验证请求发出后的回调
+function onVerification(xmlHttp) {
+    //请求发送完成，并接收到后台返回的信息
+    if (xmlHttp.readyState == 4 || xmlHttp.readyState == "complete") {
+        if ((xmlHttp.status >= 200 && xmlHttp.status < 300) || xmlHttp.status == 304) {
+            alert("验证成功")
+        } else {
+            alert("验证失败");
+        }
+        //后端返回的信息
+        console.log(xmlHttp.responseText);
+    }
+}
+verification()
+// var ss = {
+//     a: 'a',
+//     b: 'b'
+// }
+// console.log();
+//读取cookies 
+
+// regist();
+// function onregist(xmlHttp) {
+//     if (xmlHttp.readyState == 4 || xmlHttp.readyState == "complete") {
+//         if ((xmlHttp.status >= 200 && xmlHttp.status < 300) || xmlHttp.status == 304) {
+//             alert("验证成功")
+//         } else {
+//             alert("验证失败");
+//         }
+//         //if(xmlHttp.responseText=="登录成功"){
+
+//         //}
+
+//     }
+// }
+// function regist() {
+//     var http = ajax();
+//     //请求发送后的回调
+//     http.onreadystatechange = onregist;
+//     var url = 'http://localhost:8080/regist';
+//     var data = {
+//         username: 'wang',
+//         password: 'wang'
+//     }
+//     //获取cookie,cookie可以由后端直接设置
+//     var token = GetCookie("Token");
+//     http.open("POST", url, true);
+
+//     http.setRequestHeader("Content-type", "application/json");
+//     http.send(JSON.stringify(data));
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*实现类似jq的ajax*/

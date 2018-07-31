@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=88340fc67e8b4710d12ffbccf3cfc3b2/b64543a98226cffc2c824855b5014a90f703eaa9.jpg" download="test">aa</a>
+    <!-- <div id='iframe_svg' style='visibility:hidden;opacity:0;position: fixed;z-index: 0;width: 100%;height: 100%;'>
+        <iframe src='/mindmap/" + e + "'>
+    </iframe>
+    </div> -->
+    <a href="#" onclick="ttt()">download</a>
+
+    <iframe id="ifile" style="display:none"></iframe>
+
+    <script>
+        function ttt() {
+            var url = "https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=88340fc67e8b4710d12ffbccf3cfc3b2/b64543a98226cffc2c824855b5014a90f703eaa9.jpg";
+            document.getElementById("ifile").src = url;
+        }
+
+        function fake_click(obj) {
+            var ev = document.createEvent("MouseEvents");
+            ev.initMouseEvent(
+                "click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null
+            );
+            obj.dispatchEvent(ev);
+        }
+        var save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
+        save_link.href = "https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=88340fc67e8b4710d12ffbccf3cfc3b2/b64543a98226cffc2c824855b5014a90f703eaa9.jpg";
+        save_link.download = 'a.jpg';
+        document.body.appendChild(save_link);
+        // fake_click(save_link);
+        //下载文件的地址
+    </script>
+</body>
+
+</html>
